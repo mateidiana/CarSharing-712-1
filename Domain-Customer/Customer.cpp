@@ -77,3 +77,27 @@ void Customer::setGdprDeleted(bool gdprDeleted) {
 void Customer::setId(const string& id) {
     id_ = id;
 }
+
+string Customer::getOrderedCar() const {
+    return orderedCar_;
+}
+
+Date Customer::getOrderDate() const {
+    return orderedDate_;
+}
+
+bool Customer::getHasOrderedCar() const {
+    return hasOrderedCar_;
+}
+
+void Customer::setOrderedCar(const std::string &orderedCar) {
+    orderedCar_=orderedCar;
+}
+
+void Customer::setOrderedDate(Date date) {
+    orderedDate_=date;
+}
+
+void Customer::setHasOrderedCar(bool hasOrderedCar) {
+    hasOrderedCar_=hasOrderedCar;
+}
