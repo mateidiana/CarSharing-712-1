@@ -10,4 +10,6 @@ add_executable(CarSharing_712_1 main.cpp
         Domain-Customer/Customer.cpp
         Repository-Customers/CustomerRepository.h
         Repository-Customers/CustomerRepository.cpp
-        Controller/Controller.cpp)
+        Controller/Controller.cpp
+        Controller-Customers/CustomerController.h
+        Controller-Customers/CustomerController.cpp)
