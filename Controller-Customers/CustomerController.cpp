@@ -6,6 +6,7 @@
 #include <stdexcept>
 #include <utility>
 #include <algorithm>
+#include <cstring>
 
 CustomerController::CustomerController(CustomerRepository customerRepo) : customerRepo(std:: move(customerRepo)) {}
 
