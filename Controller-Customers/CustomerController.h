@@ -19,7 +19,6 @@ public:
 
     void deleteCustomer(const string &deleteName, bool isEmployee);
 
-
     void setCustomerOrder(const string &name, const string &car, Date date, bool isEmployee);
 
     vector<Customer> getAll();
