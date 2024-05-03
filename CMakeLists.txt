@@ -5,9 +5,9 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(CarSharing_712_1 main.cpp
         Controller/Controller.h
-        Domain-Kunde/Customer.h
-        Domain-Kunde/Customer.cpp
-        Domain-Kunde/Customer.cpp
-        Repository-Kunden/CustomerRepository.h
-        Repository-Kunden/CustomerRepository.cpp
+        Domain-Customer/Customer.h
+        Domain-Customer/Customer.cpp
+        Domain-Customer/Customer.cpp
+        Repository-Customers/CustomerRepository.h
+        Repository-Customers/CustomerRepository.cpp
         Controller/Controller.cpp)

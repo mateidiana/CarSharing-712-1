@@ -7,7 +7,7 @@
 
 #include <vector>
 #include <stdexcept>
-#include "../Domain-Kunde/Customer.h"
+#include "../Domain-Customer/Customer.h"
 
 using namespace std;
 
