@@ -6,33 +6,29 @@
 
 Admin::Admin(const string &name, const string &lastName, const string &email, const string &position,
              const string &abbreviation, const string &phoneNumber, const string &address, const string &remarks,
-             double salary, const string &password) : Employee(name, lastName, email, position, abbreviation, phoneNumber, address, remarks,
-                                    salary, password) {}
+             double salary, const string &password, EmployeeRepository employeeRepository) : Employee(name, lastName, email, position, abbreviation, phoneNumber, address, remarks,
+                                    salary, password), employeeRepository(employeeRepository) {
 
-
-void Admin::adjustSalary(Employee &employee, double newSalary) {
-    employee.setSalary(newSalary);
 }
 
-void Admin::removeAdminRights(Admin &admin) {
-    Employee newEmployee(admin.getName(), admin.getLastName(), admin.getEmail(),
-                         admin.getPosition(), admin.getAbbreviation(),
-                         admin.getPhoneNumber(), admin.getAddress(), admin.getRemarks(), admin.getSalary(), admin.getPassword());
-    delete &admin;
+void Admin::viewEmployeeSalary(Employee &employee) {
+    employeeRepository.viewSalary(employee, isAdmin);
 }
 
-void Admin::assignAdminRights(Employee &employee) {
-    Admin newAdmin(employee.getName(), employee.getLastName(), employee.getEmail(),
-                   employee.getPosition(), employee.getAbbreviation(),
-                   employee.getPhoneNumber(), employee.getAddress(),
-                   employee.getRemarks(), employee.getSalary(), employee.getPassword());
-    delete &employee;
+void Admin::adjustEmployeeSalary(Employee &employee, double newSalary) {
+    employeeRepository.adjustSalary(employee, newSalary, isAdmin);
 }
 
-void Admin::viewSalary(Employee &employee) {
-    cout<<"Salary of "<<employee.getName()<<" "<<employee.getLastName()<<" is: "<<employee.getSalary();
+void Admin::assignEmployeeAdminRights(Employee &employee) {
+    employeeRepository.assignAdminRights(employee, isAdmin);
 }
 
-void Admin::resetPassword(Employee &employee, string newPassword) {
-    employee.setPassword(newPassword);
+void Admin::removeEmployeeAdminRights(Employee &employee) {
+    employeeRepository.removeAdminRights(employee, isAdmin);
 }
+
+void Admin::resetEmployeePassword(Employee &employee, string newPassword) {
+    employeeRepository.resetPassword(employee, newPassword, isAdmin);
+}
+
+

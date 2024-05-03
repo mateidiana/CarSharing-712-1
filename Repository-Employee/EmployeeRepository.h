@@ -7,6 +7,7 @@
 #include <vector>
 #include <stdexcept>
 #include "../Domain-Employee/Employee.h"
+#include "../Domain-Admin/Admin.h"
 
 class EmployeeRepository{
 
@@ -15,7 +16,13 @@ private:
     void startData();
 
 public:
+    explicit EmployeeRepository(const vector<Employee> &employees);
 
+    void viewSalary(Employee &employee, bool isAdmin);
+    void adjustSalary(Employee &employee, double newSalary, bool isAdmin);
+    void assignAdminRights(Employee &employee, bool isAdmin);
+    void resetPassword(Employee &employee, string newPassword, bool isAdmin);
+    void removeAdminRights(Employee &employee, bool isAdmin);
 };
 
 
