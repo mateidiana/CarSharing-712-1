@@ -11,6 +11,10 @@
 
 using namespace std;
 
+struct Date {
+    int day, month, year;
+};
+
 class Customer {
 private:
     string id_;
@@ -21,6 +25,10 @@ private:
     string address_;
     string remarks_;
     bool gdprDeleted_;
+
+    string orderedCar_;
+    Date orderedDate_;
+    bool hasOrderedCar_= false;
 
 public:
     Customer(string id, string name, string lastName, string email,
@@ -42,6 +50,13 @@ public:
     void setAddress(const string& address);
     void setRemarks(const string& remarks);
     void setGdprDeleted(bool gdprDeleted);
+
+    string getOrderedCar() const;
+    Date getOrderDate() const;
+    bool getHasOrderedCar() const;
+    void setOrderedCar(const string &orderedCar);
+    void setOrderedDate(Date date);
+    void setHasOrderedCar(bool hasOrderedCar);
 
 private:
     void setId(const string& id);

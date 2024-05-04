@@ -7,7 +7,7 @@
 
 #include <vector>
 #include <stdexcept>
-#include "../Domain-Kunde/Customer.h"
+#include "../Domain-Customer/Customer.h"
 
 using namespace std;
 
@@ -23,6 +23,7 @@ public:
     void modifyCustomer(const Customer& customer, bool isEmployee);
     void deleteCustomer(const Customer& customer, bool isEmployee);
     void anonymizeCustomer(const Customer& customer, bool isEmployee);
+    void setOrder(const Customer& customer, const string car, Date date, bool isEmployee);
     vector<Customer> getAll();
 };
 
