@@ -17,6 +17,7 @@ struct Date {
 
 class Customer {
 private:
+    string password_;
     string id_;
     string name_;
     string lastName_;
@@ -31,9 +32,10 @@ private:
     bool hasOrderedCar_= false;
 
 public:
-    Customer(string id, string name, string lastName, string email,
+    Customer(string password, string id, string name, string lastName, string email,
              string phoneNumber, string address, string remarks, bool gdprDeleted);
 
+    string getPassword() const;
     string getId() const;
     string getName() const;
     string getlastName() const;
@@ -43,6 +45,7 @@ public:
     string getRemarks() const;
     bool getGdprDeleted() const;
     bool hasOrderedCar() const;
+    void setPassword(const string& password);
     void setName(const string& name);
     void setlastName(const string& lastName);
     void setEmail(const string& email);

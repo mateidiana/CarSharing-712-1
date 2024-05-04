@@ -4,10 +4,15 @@
 
 #include "Customer.h"
 
-Customer::Customer(string id, string name, string lastName, string email,
+Customer::Customer(string password, string id, string name, string lastName, string email,
                    string phoneNumber,string address,string remarks, bool gdprDeleted)
-        : id_(id), name_(name), lastName_(lastName), email_(email), phoneNumber_(phoneNumber),
+        : password_(password), id_(id), name_(name), lastName_(lastName), email_(email), phoneNumber_(phoneNumber),
           address_(address), remarks_(remarks), gdprDeleted_(gdprDeleted) {}
+
+
+string Customer::getPassword() const {
+    return id_;
+}
 
 string Customer::getId() const {
     return id_;
@@ -44,6 +49,10 @@ bool Customer::getGdprDeleted() const {
 bool Customer::hasOrderedCar() const {
     // aici mai trebuie completat
     return false;
+}
+
+void Customer::setPassword(const string &password) {
+    password_ = password;
 }
 
 void Customer::setName(const string& name) {
@@ -90,7 +99,7 @@ bool Customer::getHasOrderedCar() const {
     return hasOrderedCar_;
 }
 
-void Customer::setOrderedCar(const std::string &orderedCar) {
+void Customer::setOrderedCar(const string &orderedCar) {
     orderedCar_=orderedCar;
 }
 
