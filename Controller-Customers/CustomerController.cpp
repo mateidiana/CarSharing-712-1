@@ -49,14 +49,14 @@ vector<Customer> CustomerController::getAll() {
     return allCustomers;
 }
 
-vector<Customer> CustomerController::findByEmail(std::string &email) {
+Customer CustomerController::findByEmail(std::string &email) {
     vector<Customer> foundCustomers;
     for (const Customer &customer: customerRepo.getAll()) {
 
         if (customer.getEmail() == email)
             foundCustomers.push_back(customer);
     }
-    return foundCustomers;
+    return foundCustomers[0];
 }
 
 vector<Customer> CustomerController::findByPhone(std::string &phoneNumber) {

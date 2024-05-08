@@ -32,7 +32,7 @@ public:
 
     vector<Customer> getAll();
 
-    vector<Customer> findByEmail(string &email);
+    Customer findByEmail(string &email);
 
     vector<Customer> findByPhone(string &phoneNumber);
 
