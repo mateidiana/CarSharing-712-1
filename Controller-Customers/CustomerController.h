@@ -17,12 +17,18 @@ public:
 
     CustomerController(CustomerRepository customerRepo);
 
-    void addCustomer(const string &id, const string &name, const string &lastName, const string &email,
+    void addCustomer(const string &id, const string &name, const string &lastName, const string &email, const string &password,
                      const string &phoneNumber, const string &address, const string &remarks, bool gdprDeleted, bool isEmployee);
 
     void deleteCustomer(const string &deleteName, bool isEmployee);
 
     void setCustomerOrder(const string &name, const string &car, Date date, bool isEmployee);
+
+    void changePassword(string &email, const std::string &newpassword, bool isEmployee, bool isAdmin);
+
+    void changeRemarks(string &email, const std::string &newRemarks, bool isEmployee, bool isAdmin);
+
+
 
     vector<Customer> getAll();
 

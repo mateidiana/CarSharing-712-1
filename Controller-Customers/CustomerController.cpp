@@ -11,11 +11,11 @@
 CustomerController::CustomerController(CustomerRepository customerRepo) : customerRepo(std:: move(customerRepo)) {}
 
 void CustomerController::addCustomer(const std::string &id, const std::string &name, const std::string &lastName,
-                                     const std::string &email, const std::string &phoneNumber,
+                                     const std::string &email, const std::string &password, const std::string &phoneNumber,
                                      const std::string &address, const std::string &remarks, bool gdprDeleted, bool isEmployee) {
 
 
-        Customer addedCustomer(id,name,lastName,email,phoneNumber,address,remarks,gdprDeleted);
+        Customer addedCustomer(id,name,lastName,email,password,phoneNumber,address,remarks,gdprDeleted);
         customerRepo.createCustomer(addedCustomer,isEmployee);
 
 }
@@ -99,4 +99,55 @@ vector<Customer> CustomerController::findByOrderedCar(std::string &orderedCar) {
 
     sort(foundCustomers.begin(),foundCustomers.end(), compareCarOrderDate);
     return foundCustomers;
+}
+
+
+void CustomerController::changePassword(std::string &email, const std::string &newpassword, bool isEmployee, bool isAdmin) {
+    //find customers by email
+    vector<Customer> customers=this->findByEmail(email);
+
+    //check if any customers with the given email were found
+    if(customers.empty()){
+        throw runtime_error("Customer not found");
+    }
+
+    if(isEmployee || isAdmin){
+        throw runtime_error("Unauthorized access");
+    }
+
+    //if there is only one customer with the given email, change its password
+    if(customers.size()==1){
+        Customer& customerToUpdate=customers[0];
+        customerToUpdate.setPassword(newpassword);
+        customerRepo.modifyCustomer(customerToUpdate,isEmployee);
+        return;
+
+
+    }
+
+}
+
+void CustomerController::changeRemarks(std::string& email, const std::string& newRemarks, bool isEmployee, bool isAdmin) {
+    // Find customers by email
+    vector<Customer> customers = this->findByEmail(email);
+
+    // Check if any customers with the given email were found
+    if (customers.empty()) {
+        throw runtime_error("Customer not found");
+    }
+
+
+    if (isEmployee || isAdmin) {
+        throw runtime_error("Unauthorized access");
+    }
+
+
+    // If there's only one customer with the email, update its remarks directly
+    if (customers.size() == 1) {
+        Customer& customerToUpdate = customers[0];
+        customerToUpdate.setRemarks(newRemarks);
+        // Update the customer in the repository
+        customerRepo.modifyCustomer(customerToUpdate, isEmployee);
+        return;
+    }
 }

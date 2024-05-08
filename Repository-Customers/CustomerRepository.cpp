@@ -81,14 +81,14 @@ vector<Customer> CustomerRepository::getAll() {
 }
 
 void CustomerRepository::startData() {
-    customers_.push_back(Customer("1","Bob","Popescu","bob1@yahoo.com","1234567892","Plopilor 1","", false));
-    customers_.push_back(Customer("2","Zob","Georgescu","zob@yahoo.com","2341567345","Moldoveanu 15","", false));
-    customers_.push_back(Customer("3","Dob","Florescu","dob25@yahoo.com","5678345123","Ariesului 112","", false));
-    customers_.push_back(Customer("4","Cob","Grigorescu","ciob15@yahoo.com","4567123234","Bucium 20","", false));
-    customers_.push_back(Customer("5","Ana","Vladescu","anavld@yahoo.com","2345123897","Cisnadiei 2","", false));
-    customers_.push_back(Customer("6","Maria","Andrei","andreimaria5@yahoo.com","5678456098","Baciului 4","", false));
-    customers_.push_back(Customer("7","Mihai","George","mihaig@yahoo.com","4567345234","Negoi 12","", false));
-    customers_.push_back(Customer("8","Laura","Mihaelescu","lauram@yahoo.com","5678456345","Florilor 15","", false));
-    customers_.push_back(Customer("9","Andreea","Neamtu","neamtuandreea@yahoo.com","4567234123","Farului 1","", false));
-    customers_.push_back(Customer("10","Bianca","Fader","biancafad@yahoo.com","6789467125","Gradinii 45","", false));
+    customers_.push_back(Customer("1","Bob","Popescu","bob1@yahoo.com","1234","1234567892","Plopilor 1","", false));
+    customers_.push_back(Customer("2","Zob","Georgescu","zob@yahoo.com","abcd","2341567345","Moldoveanu 15","", false));
+    customers_.push_back(Customer("3","Dob","Florescu","dob25@yahoo.com","qwert","5678345123","Ariesului 112","", false));
+    customers_.push_back(Customer("4","Cob","Grigorescu","ciob15@yahoo.com","asdf","4567123234","Bucium 20","", false));
+    customers_.push_back(Customer("5","Ana","Vladescu","anavld@yahoo.com","tyuio","2345123897","Cisnadiei 2","", false));
+    customers_.push_back(Customer("6","Maria","Andrei","andreimaria5@yahoo.com","qawsed","5678456098","Baciului 4","", false));
+    customers_.push_back(Customer("7","Mihai","George","mihaig@yahoo.com","12345","4567345234","Negoi 12","", false));
+    customers_.push_back(Customer("8","Laura","Mihaelescu","lauram@yahoo.com","1a2s3d","5678456345","Florilor 15","", false));
+    customers_.push_back(Customer("9","Andreea","Neamtu","neamtuandreea@yahoo.com","4f5g6h","4567234123","Farului 1","", false));
+    customers_.push_back(Customer("10","Bianca","Fader","biancafad@yahoo.com","r4t5y6","6789467125","Gradinii 45","", false));
 }

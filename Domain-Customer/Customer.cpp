@@ -4,9 +4,9 @@
 
 #include "Customer.h"
 
-Customer::Customer(string id, string name, string lastName, string email,
+Customer::Customer(string id, string name, string lastName, string email,string password,
                    string phoneNumber,string address,string remarks, bool gdprDeleted)
-        : id_(id), name_(name), lastName_(lastName), email_(email), phoneNumber_(phoneNumber),
+        : id_(id), name_(name), lastName_(lastName), email_(email), password_(password), phoneNumber_(phoneNumber),
           address_(address), remarks_(remarks), gdprDeleted_(gdprDeleted) {}
 
 string Customer::getId() const {
@@ -56,6 +56,10 @@ void Customer::setlastName(const string& lastName) {
 
 void Customer::setEmail(const string& email) {
     email_ = email;
+}
+
+void Customer::setPassword(const std::string &password) {
+    password_=password;
 }
 
 void Customer::setPhoneNumber(const string& phoneNumber) {
