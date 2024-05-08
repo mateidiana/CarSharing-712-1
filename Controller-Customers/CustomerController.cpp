@@ -17,6 +17,17 @@ void CustomerController::addCustomer(const std::string &id, const std::string &n
                                      const std::string &phoneNumber,
                                      const std::string &address, const std::string &remarks, bool gdprDeleted,
                                      bool isEmployee) {
+    if (!gdprDeleted) {
+        if (id == "" || name == "" || lastName == "" || phoneNumber == "" || email == "" || password == "" ||
+            address == "") {
+            throw runtime_error(
+                    "The gdpr is false. Please complete all the requested fields (id, name, lastName, phoneNumber, email, password. address).");
+        }
+    } else {
+        if (name == "" || lastName == "") {
+            throw runtime_error("The name and the lastName are mandatory.");
+        }
+    }
 
 
     Customer addedCustomer(id, name, lastName, email, password, phoneNumber, address, remarks, gdprDeleted);
