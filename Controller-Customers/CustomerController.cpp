@@ -104,10 +104,10 @@ vector<Customer> CustomerController::findByOrderedCar(std::string &orderedCar) {
 
 void CustomerController::changePassword(std::string &email, const std::string &newpassword, bool isEmployee, bool isAdmin) {
     //find customers by email
-    vector<Customer> customers=this->findByEmail(email);
+    Customer customer=this->findByEmail(email);
 
     //check if any customers with the given email were found
-    if(customers.empty()){
+    if(customer.getId().empty()){
         throw runtime_error("Customer not found");
     }
 
@@ -115,24 +115,17 @@ void CustomerController::changePassword(std::string &email, const std::string &n
         throw runtime_error("Unauthorized access");
     }
 
-    //if there is only one customer with the given email, change its password
-    if(customers.size()==1){
-        Customer& customerToUpdate=customers[0];
-        customerToUpdate.setPassword(newpassword);
-        customerRepo.modifyCustomer(customerToUpdate,isEmployee);
-        return;
-
-
-    }
+    customer.setPassword(newpassword);
+    customerRepo.modifyCustomer(customer,isEmployee);
 
 }
 
 void CustomerController::changeRemarks(std::string& email, const std::string& newRemarks, bool isEmployee, bool isAdmin) {
     // Find customers by email
-    vector<Customer> customers = this->findByEmail(email);
+    Customer customer = this->findByEmail(email);
 
     // Check if any customers with the given email were found
-    if (customers.empty()) {
+    if (customer.getId().empty()) {
         throw runtime_error("Customer not found");
     }
 
@@ -141,13 +134,8 @@ void CustomerController::changeRemarks(std::string& email, const std::string& ne
         throw runtime_error("Unauthorized access");
     }
 
+    customer.setRemarks(newRemarks);
+    customerRepo.modifyCustomer(customer, isEmployee);
 
-    // If there's only one customer with the email, update its remarks directly
-    if (customers.size() == 1) {
-        Customer& customerToUpdate = customers[0];
-        customerToUpdate.setRemarks(newRemarks);
-        // Update the customer in the repository
-        customerRepo.modifyCustomer(customerToUpdate, isEmployee);
-        return;
-    }
 }
+
