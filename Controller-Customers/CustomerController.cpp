@@ -158,6 +158,8 @@ CustomerController::changeRemarks(std::string &email, const std::string &newRema
     }
 }
 
+//Georgiana
+
 bool CustomerController::isEmailTaken(const string &email) {
     for (const Customer &customer: customerRepo.getAll()) {
         if (customer.getEmail() == email)
@@ -167,5 +169,33 @@ bool CustomerController::isEmailTaken(const string &email) {
 }
 
 bool CustomerController::isPhoneNumberValid(const string &phoneNumber) {
-    return false;
+    bool hasPlusAtStart = false;
+
+    if (!phoneNumber.empty() && phoneNumber[0] == '+') {
+        hasPlusAtStart = true;
+    }
+
+    for (char c: phoneNumber) {
+        if (!isdigit(c) && c != ' ') {
+            return false;
+        }
+    }
+
+    return (hasPlusAtStart && phoneNumber.length() > 1) || !hasPlusAtStart;
+}
+
+
+bool CustomerController::isEmailFormaValid(const string &email) {
+    bool hasAtSymbol = false;
+    bool hasDot = false;
+
+    for (char c: email) {
+        if (c == '@') {
+            hasAtSymbol = true;
+        } else if (c == '.') {
+            hasDot = true;
+        }
+    }
+
+    return hasAtSymbol && hasDot;
 }
