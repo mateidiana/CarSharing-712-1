@@ -4,13 +4,14 @@
 
 #ifndef CARSHARING_712_1_EMPLOYEE_H
 #define CARSHARING_712_1_EMPLOYEE_H
+
 #include <iostream>
 #include <string>
 #include <stdexcept>
 
 using namespace std;
 
-class Employee{
+class Employee {
 
 private:
 

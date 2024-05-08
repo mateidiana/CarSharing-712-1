@@ -17,20 +17,18 @@ void EmployeeRepository::adjustSalary(Employee &employee, double newSalary, bool
 void EmployeeRepository::removeAdminRights(Employee &employee, bool isAdmin) {
     if (isAdmin) {
         //adaugam bool-urile alea la clase? ca sa pot da drepturi de admin unui angajat
-    }
-    else throw invalid_argument("Only administrators are allowed to remove administrator rights.");
+    } else throw invalid_argument("Only administrators are allowed to remove administrator rights.");
 }
 
 void EmployeeRepository::assignAdminRights(Employee &employee, bool isAdmin) {
     if (isAdmin) {
         //adaugam bool-urile alea la clase? ca sa pot da drepturi de admin unui angajat
-        }
-    else throw invalid_argument("Only administrators are allowed to assign administrator rights.");
+    } else throw invalid_argument("Only administrators are allowed to assign administrator rights.");
 }
 
 void EmployeeRepository::viewSalary(Employee &employee, bool isAdmin) {
     if (isAdmin)
-        cout<<"Salary of "<<employee.getName()<<" "<<employee.getLastName()<<" is: "<<employee.getSalary();
+        cout << "Salary of " << employee.getName() << " " << employee.getLastName() << " is: " << employee.getSalary();
     else throw invalid_argument("Only administrators are allowed to view employee salaries.");
 }
 
@@ -42,11 +40,11 @@ void EmployeeRepository::resetPassword(Employee &employee, string newPassword, b
 
 void EmployeeRepository::startData() {
     employees_.push_back(Employee("John", "Doe", "john@example.com", "Manager", "JD", "123456789", "123 Main St",
-                                 "Good employee", 50000.0, "password1"));
+                                  "Good employee", 50000.0, "password1"));
     employees_.push_back(Employee("Alice", "Smith", "alice@example.com", "Developer", "AS", "987654321", "456 Elm St",
-                                 "Hardworking", 60000.0, "password2"));
+                                  "Hardworking", 60000.0, "password2"));
     employees_.push_back(Employee("Robert", "Johnson", "bob@example.com", "Designer", "RJ", "555555555", "789 Oak St",
-                                 "Experienced", 55000.0, "password3"));
+                                  "Experienced", 55000.0, "password3"));
     employees_.push_back(Employee("Jane", "Doe", "john@example.com", "Manager", "JD", "123456777", "120 Main St",
-                                 "Good employee", 70000.0, "password4"));
+                                  "Good employee", 70000.0, "password4"));
 }

@@ -17,8 +17,10 @@ public:
 
     CustomerController(CustomerRepository customerRepo);
 
-    void addCustomer(const string &id, const string &name, const string &lastName, const string &email, const string &password,
-                     const string &phoneNumber, const string &address, const string &remarks, bool gdprDeleted, bool isEmployee);
+    void addCustomer(const string &id, const string &name, const string &lastName, const string &email,
+                     const string &password,
+                     const string &phoneNumber, const string &address, const string &remarks, bool gdprDeleted,
+                     bool isEmployee);
 
     void deleteCustomer(const string &deleteName, bool isEmployee);
 
@@ -41,6 +43,14 @@ public:
     vector<Customer> findByOrderedCar(string &orderedCar);
 
     static bool compareCarOrderDate(const Customer &customer1, const Customer &customer2);
+
+    //Georgiana
+
+    bool isEmailTaken(const string& email);
+
+    bool isEmailFormaValid(const string& email);
+
+    bool isPhoneNumberValid(const string& phoneNumber);
 };
 
 

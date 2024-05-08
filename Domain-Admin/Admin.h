@@ -4,6 +4,7 @@
 
 #ifndef CARSHARING_712_1_ADMIN_H
 #define CARSHARING_712_1_ADMIN_H
+
 #include <iostream>
 #include <string>
 #include <stdexcept>
@@ -12,7 +13,7 @@
 
 using namespace std;
 
-class Admin : public Employee{
+class Admin : public Employee {
 
 private:
     EmployeeRepository employeeRepository;
@@ -26,9 +27,13 @@ public:
           double salary, const string &password, EmployeeRepository employeeRepository);
 
     void viewEmployeeSalary(Employee &employee);
+
     void adjustEmployeeSalary(Employee &employee, double newSalary);
+
     void assignEmployeeAdminRights(Employee &employee);
+
     void removeEmployeeAdminRights(Admin &admin);
+
     void resetEmployeePassword(Employee &employee, string newPassword);
 
     void removeEmployeeAdminRights(Employee &employee);

@@ -4,8 +4,8 @@
 
 #include "Customer.h"
 
-Customer::Customer(string id, string name, string lastName, string email,string password,
-                   string phoneNumber,string address,string remarks, bool gdprDeleted)
+Customer::Customer(string id, string name, string lastName, string email, string password,
+                   string phoneNumber, string address, string remarks, bool gdprDeleted)
         : id_(id), name_(name), lastName_(lastName), email_(email), password_(password), phoneNumber_(phoneNumber),
           address_(address), remarks_(remarks), gdprDeleted_(gdprDeleted) {}
 
@@ -46,31 +46,31 @@ bool Customer::hasOrderedCar() const {
     return false;
 }
 
-void Customer::setName(const string& name) {
+void Customer::setName(const string &name) {
     name_ = name;
 }
 
-void Customer::setlastName(const string& lastName) {
+void Customer::setlastName(const string &lastName) {
     lastName_ = lastName;
 }
 
-void Customer::setEmail(const string& email) {
+void Customer::setEmail(const string &email) {
     email_ = email;
 }
 
 void Customer::setPassword(const std::string &password) {
-    password_=password;
+    password_ = password;
 }
 
-void Customer::setPhoneNumber(const string& phoneNumber) {
+void Customer::setPhoneNumber(const string &phoneNumber) {
     phoneNumber_ = phoneNumber;
 }
 
-void Customer::setAddress(const string& address) {
+void Customer::setAddress(const string &address) {
     address_ = address;
 }
 
-void Customer::setRemarks(const string& remarks) {
+void Customer::setRemarks(const string &remarks) {
     remarks_ = remarks;
 }
 
@@ -78,7 +78,7 @@ void Customer::setGdprDeleted(bool gdprDeleted) {
     gdprDeleted_ = gdprDeleted;
 }
 
-void Customer::setId(const string& id) {
+void Customer::setId(const string &id) {
     id_ = id;
 }
 
@@ -95,13 +95,13 @@ bool Customer::getHasOrderedCar() const {
 }
 
 void Customer::setOrderedCar(const std::string &orderedCar) {
-    orderedCar_=orderedCar;
+    orderedCar_ = orderedCar;
 }
 
 void Customer::setOrderedDate(Date date) {
-    orderedDate_=date;
+    orderedDate_ = date;
 }
 
 void Customer::setHasOrderedCar(bool hasOrderedCar) {
-    hasOrderedCar_=hasOrderedCar;
+    hasOrderedCar_ = hasOrderedCar;
 }

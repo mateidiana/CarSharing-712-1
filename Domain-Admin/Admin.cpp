@@ -6,8 +6,14 @@
 
 Admin::Admin(const string &name, const string &lastName, const string &email, const string &position,
              const string &abbreviation, const string &phoneNumber, const string &address, const string &remarks,
-             double salary, const string &password, EmployeeRepository employeeRepository) : Employee(name, lastName, email, position, abbreviation, phoneNumber, address, remarks,
-                                    salary, password), employeeRepository(employeeRepository) {
+             double salary, const string &password, EmployeeRepository employeeRepository) : Employee(name, lastName,
+                                                                                                      email, position,
+                                                                                                      abbreviation,
+                                                                                                      phoneNumber,
+                                                                                                      address, remarks,
+                                                                                                      salary, password),
+                                                                                             employeeRepository(
+                                                                                                     employeeRepository) {
 
 }
 
