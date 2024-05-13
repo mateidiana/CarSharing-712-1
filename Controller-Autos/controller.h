@@ -1,8 +1,0 @@
-//
-// Created by Gabi Moldovan on 13.05.2024.
-//
-
-#ifndef CONTROLLER_AUTOS_CONTROLLER_H
-#define CONTROLLER_AUTOS_CONTROLLER_H
-
-#endif //CONTROLLER_AUTOS_CONTROLLER_H
