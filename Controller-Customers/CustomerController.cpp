@@ -103,7 +103,7 @@ vector<Customer> CustomerController::findByOrderedCar(std::string &orderedCar) {
 
 
 void CustomerController::changePassword(std::string &email, const std::string &newpassword, bool isEmployee, bool isAdmin) {
-    //find customers by email
+
     Customer customer=this->findByEmail(email);
 
     //check if any customers with the given email were found
@@ -121,7 +121,7 @@ void CustomerController::changePassword(std::string &email, const std::string &n
 }
 
 void CustomerController::changeRemarks(std::string& email, const std::string& newRemarks, bool isEmployee, bool isAdmin) {
-    // Find customers by email
+
     Customer customer = this->findByEmail(email);
 
     // Check if any customers with the given email were found

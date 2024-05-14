@@ -1,13 +1,11 @@
-//
-// Created by andre on 14/05/2024.
-//
+
 
 #include "CarRepository.h"
 #include <algorithm>
 #include <stdexcept>
 
 void CarRepository::addCar(const Car& car) {
-    // de implementat lapa
+    cars.push_back(car);
 }
 
 void CarRepository::updateCar(const string& licensePlate, const Car& newCarData) {
