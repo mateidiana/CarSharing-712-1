@@ -21,6 +21,8 @@ private:
     string transmission;
     string color;
     string remark;
+    bool ordered; 
+    bool active;  
 
 public:
     Car(string licensePlate, string model, string brand, int firstRegistrationYear, int mileage, double dailyPrice, string fuelType, string transmission, string color, string remark);
@@ -46,6 +48,10 @@ public:
     void setTransmission(const string &transmission);
     void setColor(const string &color);
     void setRemark(const string &remark);
+    bool isOrdered() const;
+    void setOrdered(bool ordered);
+    bool isActive() const;
+    void setActive(bool active);
 };
 
 

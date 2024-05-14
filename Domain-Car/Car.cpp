@@ -28,3 +28,7 @@ void Car::setFuelType(const string &fuelType) { this->fuelType = fuelType; }
 void Car::setTransmission(const string &transmission) { this->transmission = transmission; }
 void Car::setColor(const string &color) { this->color = color; }
 void Car::setRemark(const string &remark) { this->remark = remark;}
+bool Car::isOrdered() const {return ordered;}
+void Car::setOrdered(bool ordered) {this->ordered = ordered;}
+bool Car::isActive() const {return active;}
+void Car::setActive(bool active) {this->active = active;}

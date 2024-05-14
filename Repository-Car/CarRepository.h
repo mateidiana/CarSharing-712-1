@@ -10,14 +10,14 @@
 
 using namespace std;
 
-class CarManager {
+class CarRepository {
 private:
     vector<Car> cars;
 
 public:
-    void createCar(const Car& car);
-    void modifyCar(const string& licensePlate, const Car& newCarData);
-    void deleteCar(const string& licensePlate);
+    void addCar(const Car& car);
+    void updateCar(const string& licensePlate, const Car& newCarData);
+    void removeCar(const string& licensePlate);
     void deactivateCar(const string& licensePlate);
 };
 
