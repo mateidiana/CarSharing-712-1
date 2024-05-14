@@ -1,7 +1,3 @@
-//
-// Created by andre on 14/05/2024.
-//
-
 #include "Car.h"
 
 Car::Car(string licensePlate, string model, string brand, int firstRegistrationYear, int mileage, double dailyPrice, string fuelType, string transmission, string color, string remark)
