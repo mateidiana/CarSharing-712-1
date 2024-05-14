@@ -106,7 +106,7 @@ void CustomerController::changePassword(std::string &email, const std::string &n
 
     Customer customer=this->findByEmail(email);
 
-    //check if any customers with the given email were found
+
     if(customer.getId().empty()){
         throw runtime_error("Customer not found");
     }
@@ -124,7 +124,7 @@ void CustomerController::changeRemarks(std::string& email, const std::string& ne
 
     Customer customer = this->findByEmail(email);
 
-    // Check if any customers with the given email were found
+
     if (customer.getId().empty()) {
         throw runtime_error("Customer not found");
     }
