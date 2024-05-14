@@ -41,6 +41,7 @@ public:
     vector<Customer> findByOrderedCar(string &orderedCar);
 
     static bool compareCarOrderDate(const Customer &customer1, const Customer &customer2);
+
 };
 
 
