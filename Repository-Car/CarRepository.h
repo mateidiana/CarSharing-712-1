@@ -1,7 +1,3 @@
-//
-// Created by andre on 14/05/2024.
-//
-
 #ifndef CARSHARING_712_1_CARREPOSITORY_H
 #define CARSHARING_712_1_CARREPOSITORY_H
 
