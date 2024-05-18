@@ -12,17 +12,27 @@
 class EmployeeRepository{
 
 private:
+
     vector<Employee> employees_;
+    vector<Admin> admins_;
     void startData();
 
 public:
-    explicit EmployeeRepository(const vector<Employee> &employees);
 
-    void viewSalary(Employee &employee, bool isAdmin);
-    void adjustSalary(Employee &employee, double newSalary, bool isAdmin);
-    void assignAdminRights(Employee &employee, bool isAdmin);
-    void resetPassword(Employee &employee, string newPassword, bool isAdmin);
-    void removeAdminRights(Employee &employee, bool isAdmin);
+    EmployeeRepository(const vector<Employee> &employees_, const vector<Admin> &admins_) : employees_(employees_), admins_(admins_) {};
+    void viewSalary(Employee &employee);
+    void adjustSalary(Employee &employee, double newSalary);
+    void assignAdminRights(Employee &employee);
+    void resetPassword(Employee &employee, string newPassword);
+    void removeAdminRights(Admin &admin);
+
+    void addAdmin(Admin &admin);
+
+    void addEmployee(Employee &employee);
+
+    void removeEmployee(const string &email);
+
+    void removeAdmin(const string &email);
 };
 
 
