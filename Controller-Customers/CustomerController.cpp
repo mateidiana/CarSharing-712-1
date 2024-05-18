@@ -102,40 +102,35 @@ vector<Customer> CustomerController::findByOrderedCar(std::string &orderedCar) {
 }
 
 
-void CustomerController::changePassword(std::string &email, const std::string &newpassword, bool isEmployee, bool isAdmin) {
+void CustomerController::changePassword(std::string &email, const std::string &newpassword, const std::string &password) {
 
     Customer customer=this->findByEmail(email);
-
 
     if(customer.getId().empty()){
         throw runtime_error("Customer not found");
     }
 
-    if(isEmployee || isAdmin){
+    if (!customer.authenticate(email, password)){
         throw runtime_error("Unauthorized access");
     }
-
     customer.setPassword(newpassword);
-    customerRepo.modifyCustomer(customer,isEmployee);
+    customerRepo.modifyCustomer(customer);
 
 }
 
-void CustomerController::changeRemarks(std::string& email, const std::string& newRemarks, bool isEmployee, bool isAdmin) {
+void CustomerController::changeRemarks(std::string& email, const std::string& newRemarks, const std::string& password) {
 
     Customer customer = this->findByEmail(email);
-
 
     if (customer.getId().empty()) {
         throw runtime_error("Customer not found");
     }
 
-
-    if (isEmployee || isAdmin) {
+    if (!customer.authenticate(email,password)) {
         throw runtime_error("Unauthorized access");
     }
-
     customer.setRemarks(newRemarks);
-    customerRepo.modifyCustomer(customer, isEmployee);
+    customerRepo.modifyCustomer(customer);
 
 }
 
