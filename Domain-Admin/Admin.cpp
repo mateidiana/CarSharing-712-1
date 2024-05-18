@@ -4,31 +4,26 @@
 
 #include "Admin.h"
 
-Admin::Admin(const string &name, const string &lastName, const string &email, const string &position,
-             const string &abbreviation, const string &phoneNumber, const string &address, const string &remarks,
-             double salary, const string &password, EmployeeRepository employeeRepository) : Employee(name, lastName, email, position, abbreviation, phoneNumber, address, remarks,
-                                    salary, password), employeeRepository(employeeRepository) {
-
-}
 
 void Admin::viewEmployeeSalary(Employee &employee) {
-    employeeRepository.viewSalary(employee, isAdmin);
+    employeeRepository.viewSalary(employee);
 }
 
 void Admin::adjustEmployeeSalary(Employee &employee, double newSalary) {
-    employeeRepository.adjustSalary(employee, newSalary, isAdmin);
+    employeeRepository.adjustSalary(employee, newSalary);
 }
 
 void Admin::assignEmployeeAdminRights(Employee &employee) {
-    employeeRepository.assignAdminRights(employee, isAdmin);
+    employeeRepository.assignAdminRights(employee);
 }
 
-void Admin::removeEmployeeAdminRights(Employee &employee) {
-    employeeRepository.removeAdminRights(employee, isAdmin);
+void Admin::removeEmployeeAdminRights(Admin &admin) {
+    employeeRepository.removeAdminRights(admin);
 }
 
 void Admin::resetEmployeePassword(Employee &employee, string newPassword) {
-    employeeRepository.resetPassword(employee, newPassword, isAdmin);
+    employeeRepository.resetPassword(employee, newPassword);
 }
+
 
 
