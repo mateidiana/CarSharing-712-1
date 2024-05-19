@@ -4,31 +4,35 @@
 
 #ifndef CARSHARING_712_1_EMPLOYEEREPOSITORY_H
 #define CARSHARING_712_1_EMPLOYEEREPOSITORY_H
-
 #include <vector>
 #include <stdexcept>
 #include "../Domain-Employee/Employee.h"
 #include "../Domain-Admin/Admin.h"
 
-class EmployeeRepository {
+class EmployeeRepository{
 
 private:
-    vector<Employee> employees_;
 
+    vector<Employee> employees_;
+    vector<Admin> admins_;
     void startData();
 
 public:
-    explicit EmployeeRepository(const vector<Employee> &employees);
 
-    void viewSalary(Employee &employee, bool isAdmin);
+    EmployeeRepository(const vector<Employee> &employees_, const vector<Admin> &admins_) : employees_(employees_), admins_(admins_) {};
+    void viewSalary(Employee &employee);
+    void adjustSalary(Employee &employee, double newSalary);
+    void assignAdminRights(Employee &employee);
+    void resetPassword(Employee &employee, string newPassword);
+    void removeAdminRights(Admin &admin);
 
-    void adjustSalary(Employee &employee, double newSalary, bool isAdmin);
+    void addAdmin(Admin &admin);
 
-    void assignAdminRights(Employee &employee, bool isAdmin);
+    void addEmployee(Employee &employee);
 
-    void resetPassword(Employee &employee, string newPassword, bool isAdmin);
+    void removeEmployee(const string &email);
 
-    void removeAdminRights(Employee &employee, bool isAdmin);
+    void removeAdmin(const string &email);
 };
 
 

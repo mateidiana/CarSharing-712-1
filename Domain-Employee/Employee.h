@@ -4,32 +4,37 @@
 
 #ifndef CARSHARING_712_1_EMPLOYEE_H
 #define CARSHARING_712_1_EMPLOYEE_H
-
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#include "../Domain-User/User.h"
 
 using namespace std;
 
-class Employee {
+class Employee : public User {
 
 private:
 
     string name_;
     string lastName_;
-    string email_;
     string position_;
     string abbreviation_;
     string phoneNumber_;
     string address_;
     string remarks_;
     double salary_;
-    string password_;
 
 
 public:
-    Employee(string name, string lastName, string email, string position, string abbreviation, string phoneNumber,
-             string address, string remarks, double salary, string password);
+
+    Employee(const string& email, const string& password,
+             const string& name, const string& lastName,
+             const string& position, const string& abbreviation,
+             const string& phoneNumber, const string& address,
+             const string& remarks, double salary)
+            : User(email, password), name_(name), lastName_(lastName), position_(position),
+              abbreviation_(abbreviation), phoneNumber_(phoneNumber), address_(address),
+              remarks_(remarks), salary_(salary) {}
 
     const string &getRemarks() const;
 
@@ -55,10 +60,6 @@ public:
 
     const string &getName() const;
 
-    const string &getEmail() const;
-
-    void setEmail(const string &email);
-
     const string &getLastName() const;
 
     void setLastName(const string &lastName);
@@ -66,11 +67,6 @@ public:
     double getSalary() const;
 
     void setSalary(double salary);
-
-    const string &getPassword() const;
-
-    void setPassword(const string &password);
-
 
 };
 

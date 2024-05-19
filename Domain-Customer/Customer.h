@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#include "../Domain-User/User.h"
 
 using namespace std;
 
@@ -15,7 +16,7 @@ struct Date {
     int day, month, year;
 };
 
-class Customer {
+class Customer:public User {
 private:
     string id_;
     string name_;

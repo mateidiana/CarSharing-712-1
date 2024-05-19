@@ -19,17 +19,11 @@ private:
 
 public:
     CustomerRepository();
-
-    void createCustomer(const Customer &customer, bool isEmployee);
-
-    void modifyCustomer(const Customer &customer, bool isEmployee);
-
-    void deleteCustomer(const Customer &customer, bool isEmployee);
-
-    void anonymizeCustomer(const Customer &customer, bool isEmployee);
-
-    void setOrder(const Customer &customer, const string car, Date date, bool isEmployee);
-
+    void createCustomer(const Customer& customer, bool isEmployee);
+    void modifyCustomer(const Customer& customer);
+    void deleteCustomer(const Customer& customer, bool isEmployee);
+    void anonymizeCustomer(const Customer& customer, bool isEmployee);
+    void setOrder(const Customer& customer, const string car, Date date, bool isEmployee);
     vector<Customer> getAll();
 };
 
