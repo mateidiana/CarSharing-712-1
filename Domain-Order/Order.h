@@ -6,12 +6,12 @@
 #define CARSHARING_712_1_ORDER_H
 
 #include <iostream>
-#include "string";
+#include "string"
 #include "../Domain-Customer/Customer.h"
 #include "../Domain-Employee/Employee.h"
+#include "../Domain-Car/Car.h"
 
 using namespace std;
-
 
 enum class Status {
     Reservation,
@@ -24,7 +24,7 @@ private:
     string orderNumber;
     Date orderDate;
     Status status;
-    string orderedCar;
+    Car orderedCar;
     Date begin;
     Date end;
     Customer customer;
@@ -32,80 +32,54 @@ private:
     int totalSum;
     string remarks;
 
-
 public:
-    Order(const string &orderNumber, const Date &orderDate, Status status, const string &orderedCar,
+    Order(const string &orderNumber, const Date &orderDate, Status status, const Car &orderedCar,
           const Date &begin, const Date &end, const Customer &customer, const Employee &employee,
-          int totalSum, const string &remarks)
-            : orderNumber(orderNumber), orderDate(orderDate), status(status), orderedCar(orderedCar),
-              begin(begin), end(end), customer(customer), employee(employee), totalSum(totalSum), remarks(remarks) {}
+          int totalSum, const string &remarks);
 
-    string getOrderNumber() const { return orderNumber; }
+    string getOrderNumber() const;
 
-    void setOrderNumber(const string &orderNumber) { this->orderNumber = orderNumber; }
+    void setOrderNumber(const string &orderNumber);
 
-    Date getOrderDate() const { return orderDate; }
+    Date getOrderDate() const;
 
-    void setOrderDate(const Date &orderDate) { this->orderDate = orderDate; }
+    void setOrderDate(const Date &orderDate);
 
-    Status getStatus() const { return status; }
+    Status getStatus() const;
 
-    void setStatus(Status status) { this->status = status; }
+    void setStatus(Status status);
 
-    string getOrderedCar() const { return orderedCar; }
+    Car getOrderedCar() const;
 
-    void setOrderedCar(const string &orderedCar) { this->orderedCar = orderedCar; }
+    void setOrderedCar(const Car &orderedCar);
 
-    Date getBegin() const { return begin; }
+    Date getBegin() const;
 
-    void setBegin(const Date &begin) { this->begin = begin; }
+    void setBegin(const Date &begin);
 
-    Date getEnd() const { return end; }
+    Date getEnd() const;
 
-    void setEnd(const Date &end) { this->end = end; }
+    void setEnd(const Date &end);
 
-    Customer getCustomer() const { return customer; }
+    Customer getCustomer() const;
 
-    void setCustomer(const Customer &customer) { this->customer = customer; }
+    void setCustomer(const Customer &customer);
 
-    Employee getEmployee() const { return employee; }
+    Employee getEmployee() const;
 
-    void setEmployee(const Employee &employee) { this->employee = employee; }
+    void setEmployee(const Employee &employee);
 
-    int getTotalSum() const { return totalSum; }
+    int getTotalSum() const;
 
-    void setTotalSum(int totalSum) { this->totalSum = totalSum; }
+    void setTotalSum(int totalSum);
 
-    string getRemarks() const { return remarks; }
+    string getRemarks() const;
 
-    void setRemarks(const string &remarks) { this->remarks = remarks; }
+    void setRemarks(const string &remarks);
 
-    static string statusToString(Status stat) {
-        switch (stat) {
-            case Status::Reservation:
-                return "Reservation";
-            case Status::Order:
-                return "Order";
-            case Status::Completed:
-                return "Completed";
-            default:
-                return "Unknown";
-        }
-    }
+    static string statusToString(Status stat);
 
-    void printDetails() const {
-        cout << "Number of the order: " << orderNumber << endl;
-        cout << "Date of the order: " << orderDate.day << "." << orderDate.month << "." << orderDate.year << endl;
-        cout << "Status: " << statusToString(status) << endl;
-        cout << "Car: " << orderedCar << endl;
-        cout << "Start-date: " << begin.day << "." << begin.month << "." << begin.year << endl;
-        cout << "End-date: " << end.day << "." << end.month << "." << end.year << endl;
-        cout << "Customer: " << customer.getName() << endl;
-        cout << "Employee: " << employee.getName() << endl;
-        cout << "Total Cost: " << totalSum << endl;
-        cout << "Remarks: " << remarks << endl;
-    }
+    void printDetails() const;
 };
-
 
 #endif //CARSHARING_712_1_ORDER_H
