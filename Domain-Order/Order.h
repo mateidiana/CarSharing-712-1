@@ -108,6 +108,4 @@ public:
 };
 
 
-
-
 #endif //CARSHARING_712_1_ORDER_H
