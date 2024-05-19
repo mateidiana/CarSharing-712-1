@@ -67,7 +67,7 @@ void Order::printDetails() const {
     cout << "Number of the order: " << orderNumber << endl;
     cout << "Date of the order: " << orderDate.day << "." << orderDate.month << "." << orderDate.year << endl;
     cout << "Status: " << statusToString(status) << endl;
-    cout << "Car: " << orderedCar.getModel() << endl;
+    cout << "Car: " << orderedCar.getBrand() << ", " << orderedCar.getModel() << endl;
     cout << "Start-date: " << begin.day << "." << begin.month << "." << begin.year << endl;
     cout << "End-date: " << end.day << "." << end.month << "." << end.year << endl;
     cout << "Customer: " << customer.getName() << endl;
