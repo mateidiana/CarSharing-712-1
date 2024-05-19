@@ -196,7 +196,7 @@ bool CustomerController::isPhoneNumberValid(const string &phoneNumber) {
 }
 
 
-bool CustomerController::isEmailFormaValid(const string &email) {
+bool CustomerController::isEmailFormatValid(const string &email) {
     bool hasAtSymbol = false;
     bool hasDot = false;
 

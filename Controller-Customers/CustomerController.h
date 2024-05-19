@@ -48,7 +48,7 @@ public:
 
     bool isEmailTaken(const string& email);
 
-    bool isEmailFormaValid(const string& email);
+    bool isEmailFormatValid(const string& email);
 
     bool isPhoneNumberValid(const string& phoneNumber);
 };

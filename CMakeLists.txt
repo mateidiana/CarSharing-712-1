@@ -20,4 +20,7 @@ add_executable(CarSharing_712_1 main.cpp
         Controller-Customers/CustomerController.h
         Controller-Customers/CustomerController.cpp
         Controller_Validation_Customer/Validation.h
-        Controller_Validation_Customer/Validation.cpp)
+        Controller_Validation_Customer/Validation.cpp
+        Domain-Order/Order.cpp
+        Domain-Order/Order.h
+)
