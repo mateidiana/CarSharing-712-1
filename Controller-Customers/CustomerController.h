@@ -6,6 +6,7 @@
 #define CARSHARING_712_1_CUSTOMERCONTROLLER_H
 
 #include "../Repository-Customers/CustomerRepository.h"
+#include "../Domain-User/User.h"
 
 class CustomerController {
 
@@ -24,9 +25,9 @@ public:
 
     void setCustomerOrder(const string &name, const string &car, Date date, bool isEmployee);
 
-    void changePassword(string &email, const std::string &newpassword, bool isEmployee, bool isAdmin);
+    void changePassword(string &email, const std::string &newpassword, const std::string &password);
 
-    void changeRemarks(string &email, const std::string &newRemarks, bool isEmployee, bool isAdmin);
+    void changeRemarks(string &email, const std::string &newRemarks, const std::string &password);
 
 
 
@@ -41,6 +42,7 @@ public:
     vector<Customer> findByOrderedCar(string &orderedCar);
 
     static bool compareCarOrderDate(const Customer &customer1, const Customer &customer2);
+
 };
 
 

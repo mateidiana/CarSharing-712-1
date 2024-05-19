@@ -15,15 +15,14 @@ using namespace std;
 class Admin : public Employee{
 
 private:
-    EmployeeRepository employeeRepository;
-    bool isAdmin = true;
-    bool isCustomer = false;
-    bool isEmployee = false;
+    EmployeeRepository &employeeRepository;
 
 public:
-    Admin(const string &name, const string &lastName, const string &email, const string &position,
-          const string &abbreviation, const string &phoneNumber, const string &address, const string &remarks,
-          double salary, const string &password, EmployeeRepository employeeRepository);
+    Admin(const std::string& email, const std::string& password, const std::string& name, const std::string& lastName,
+          const std::string& position, const std::string& abbreviation, const std::string& phoneNumber,
+          const std::string& address, const std::string& remarks, double salary, EmployeeRepository& employeeRepo)
+            : Employee(email, password, name, lastName, position, abbreviation, phoneNumber, address, remarks, salary),
+              employeeRepository(employeeRepo) {}
 
     void viewEmployeeSalary(Employee &employee);
     void adjustEmployeeSalary(Employee &employee, double newSalary);
@@ -31,7 +30,6 @@ public:
     void removeEmployeeAdminRights(Admin &admin);
     void resetEmployeePassword(Employee &employee, string newPassword);
 
-    void removeEmployeeAdminRights(Employee &employee);
 };
 
 #endif //CARSHARING_712_1_ADMIN_H

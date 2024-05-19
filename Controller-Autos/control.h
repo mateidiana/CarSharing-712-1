@@ -2,17 +2,19 @@
 #define CONTROLLER_AUTOS_CONTROLLER_H
 
 #include <iostream>
-#inlcude <string>
+#include <string>
+#include "../Repository-Car/CarRepository.h"
 
 using namespace std;
 
 class Control {
 private:
-
+    vector<Car> cars;
+    CarRepository repo;
 public:
     Control();
     bool PlateCheck();
-    string PlateLettersCheck();
+    bool PlateLettersCheck();
     bool YearCheck();
     bool KmPriceCheck();
 };
