@@ -22,4 +22,6 @@ add_executable(CarSharing_712_1 main.cpp
         Domain-Car/Car.h
         Domain-Car/Car.cpp
         Repository-Car/CarRepository.h
-        Repository-Car/CarRepository.cpp)
+        Repository-Car/CarRepository.cpp
+        Controller-Autos/control.h
+        Controller-Autos/control.cpp)

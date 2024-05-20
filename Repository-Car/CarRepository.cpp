@@ -43,3 +43,9 @@ void CarRepository::deactivateCar(const string& licensePlate) {
     }
     throw runtime_error("Car not found");
 }
+
+
+vector<Car> CarRepository::returnList() {
+    return cars;
+}
+
