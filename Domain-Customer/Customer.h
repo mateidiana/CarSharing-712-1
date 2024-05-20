@@ -21,11 +21,11 @@ private:
     string id_;
     string name_;
     string lastName_;
-    string email_;
+    //string email_;
     string phoneNumber_;
     string address_;
     string remarks_;
-    string password_;
+    //string password_;
     bool gdprDeleted_;
 
     string orderedCar_;

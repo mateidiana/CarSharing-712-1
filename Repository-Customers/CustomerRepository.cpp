@@ -4,23 +4,24 @@
 
 #include "CustomerRepository.h"
 
+
 CustomerRepository::CustomerRepository() {
     startData();
 }
 
-void CustomerRepository::createCustomer(const Customer& customer, bool isEmployee) {
+void CustomerRepository::createCustomer(const Customer& customer, const ) {
     if (!isEmployee) {
         throw invalid_argument("Only employees are allowed to create customers.");
     }
     customers_.push_back(customer);
 }
 
-void CustomerRepository::modifyCustomer(const Customer& customer, bool isEmployee) {
-    if (!isEmployee) {
+void CustomerRepository::modifyCustomer(const Customer& customer, Employee& employee) {
+    if (!employee.authenticate(employee.getEmail(), employee.getPassword())) {
         throw invalid_argument("Only employees are allowed to modify customers.");
     }
     for (int i = 0; i < customers_.size(); i++) {
-        if (customers_[i].getName() == customer.getName()) {
+        if (customers_[i].getId() == customer.getId()) {
             customers_[i] = customer;
             return;
         }
