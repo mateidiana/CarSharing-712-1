@@ -54,8 +54,26 @@ void EmployeeRepository::resetPassword(Employee &employee, string newPassword) {
     std::cout << "Password reset for " << employee.getName() << std::endl;
 }
 
-void EmployeeRepository::startData() {
+void EmployeeRepository::startData() {}
 
+void EmployeeRepository::setupUnitTests() {}
+
+Employee* EmployeeRepository::searchEmployeeByAbbreviation(const std::string &abbreviation) {
+    for (auto& employee : employees_) {
+        if (employee.getAbbreviation() == abbreviation) {
+            return &employee;
+        }
+    }
+    return nullptr;
+}
+
+Employee* EmployeeRepository::searchEmployeeByEmail(const std::string &email) {
+    for (auto& employee : employees_) {
+        if (employee.getEmail() == email) {
+            return &employee;
+        }
+    }
+    return nullptr;
 }
 
 // Funcții Adaugate M:

@@ -23,7 +23,16 @@ add_executable(CarSharing_712_1 main.cpp
         Domain-Admin/Admin.cpp
         Controller-Customers/CustomerController.h
         Controller-Customers/CustomerController.cpp
+        Domain-Car/Car.h
+        Domain-Car/Car.cpp
+        Repository-Car/CarRepository.h
+        Repository-Car/CarRepository.cpp
         Controller-Autos/control.h
-        Controller-Autos/control.cpp)
+        Controller-Autos/control.cpp
+        Controller-Employee/EmployeeController.h
+        Controller-Employee/EmployeeController.cpp
+        UI-Employee/EmployeeUI.h
+        UI-Employee/EmployeeUI.cpp)
+
 
 target_link_libraries(CarSharing_712_1 CarRepositoryLib CarLib)
