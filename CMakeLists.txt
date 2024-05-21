@@ -5,15 +5,12 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_subdirectory(GoogleTests)
 add_subdirectory(Repository-Car)
+add_subdirectory(Repository-Customers)
 add_subdirectory(Domain-Car)
+add_subdirectory(Domain-Customer)
 
 add_executable(CarSharing_712_1 main.cpp
         Controller/Controller.h
-        Domain-Customer/Customer.h
-        Domain-Customer/Customer.cpp
-        Domain-Customer/Customer.cpp
-        Repository-Customers/CustomerRepository.h
-        Repository-Customers/CustomerRepository.cpp
         Controller/Controller.cpp
         Domain-Employee/Employee.h
         Domain-Employee/Employee.cpp
