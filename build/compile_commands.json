@@ -1,0 +1,116 @@
+[
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\CarSharing_712_1.dir\\main.cpp.obj /FdCMakeFiles\\CarSharing_712_1.dir\\ /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\main.cpp\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\main.cpp",
+  "output": "CMakeFiles\\CarSharing_712_1.dir\\main.cpp.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\CarSharing_712_1.dir\\Domain-Customer\\Customer.cpp.obj /FdCMakeFiles\\CarSharing_712_1.dir\\ /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Domain-Customer\\Customer.cpp\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Domain-Customer\\Customer.cpp",
+  "output": "CMakeFiles\\CarSharing_712_1.dir\\Domain-Customer\\Customer.cpp.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\CarSharing_712_1.dir\\Repository-Customers\\CustomerRepository.cpp.obj /FdCMakeFiles\\CarSharing_712_1.dir\\ /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Repository-Customers\\CustomerRepository.cpp\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Repository-Customers\\CustomerRepository.cpp",
+  "output": "CMakeFiles\\CarSharing_712_1.dir\\Repository-Customers\\CustomerRepository.cpp.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\CarSharing_712_1.dir\\Controller\\Controller.cpp.obj /FdCMakeFiles\\CarSharing_712_1.dir\\ /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Controller\\Controller.cpp\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Controller\\Controller.cpp",
+  "output": "CMakeFiles\\CarSharing_712_1.dir\\Controller\\Controller.cpp.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\CarSharing_712_1.dir\\Domain-Employee\\Employee.cpp.obj /FdCMakeFiles\\CarSharing_712_1.dir\\ /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Domain-Employee\\Employee.cpp\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Domain-Employee\\Employee.cpp",
+  "output": "CMakeFiles\\CarSharing_712_1.dir\\Domain-Employee\\Employee.cpp.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\CarSharing_712_1.dir\\Repository-Employee\\EmployeeRepository.cpp.obj /FdCMakeFiles\\CarSharing_712_1.dir\\ /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Repository-Employee\\EmployeeRepository.cpp\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Repository-Employee\\EmployeeRepository.cpp",
+  "output": "CMakeFiles\\CarSharing_712_1.dir\\Repository-Employee\\EmployeeRepository.cpp.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\CarSharing_712_1.dir\\Domain-Admin\\Admin.cpp.obj /FdCMakeFiles\\CarSharing_712_1.dir\\ /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Domain-Admin\\Admin.cpp\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Domain-Admin\\Admin.cpp",
+  "output": "CMakeFiles\\CarSharing_712_1.dir\\Domain-Admin\\Admin.cpp.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\CarSharing_712_1.dir\\Controller-Customers\\CustomerController.cpp.obj /FdCMakeFiles\\CarSharing_712_1.dir\\ /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Controller-Customers\\CustomerController.cpp\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Controller-Customers\\CustomerController.cpp",
+  "output": "CMakeFiles\\CarSharing_712_1.dir\\Controller-Customers\\CustomerController.cpp.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\CarSharing_712_1.dir\\Controller-Autos\\control.cpp.obj /FdCMakeFiles\\CarSharing_712_1.dir\\ /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Controller-Autos\\control.cpp\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Controller-Autos\\control.cpp",
+  "output": "CMakeFiles\\CarSharing_712_1.dir\\Controller-Autos\\control.cpp.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP -external:I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\\include\" -external:I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\" -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoGoogleTests\\CMakeFiles\\Google_tests_run.dir\\CarRepositoryTest.cpp.obj /FdGoogleTests\\CMakeFiles\\Google_tests_run.dir\\ /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\CarRepositoryTest.cpp\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\CarRepositoryTest.cpp",
+  "output": "GoogleTests\\CMakeFiles\\Google_tests_run.dir\\CarRepositoryTest.cpp.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googlemock\\include\" -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googlemock\" -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\\include\" -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\" /DWIN32 /D_WINDOWS  /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /FoGoogleTests\\Lib\\googlemock\\CMakeFiles\\gmock.dir\\__\\googletest\\src\\gtest-all.cc.obj /Fdlib\\gmockpdb_debug_postfix-NOTFOUND.pdb /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\\src\\gtest-all.cc\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\\src\\gtest-all.cc",
+  "output": "GoogleTests\\Lib\\googlemock\\CMakeFiles\\gmock.dir\\__\\googletest\\src\\gtest-all.cc.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googlemock\\include\" -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googlemock\" -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\\include\" -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\" /DWIN32 /D_WINDOWS  /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /FoGoogleTests\\Lib\\googlemock\\CMakeFiles\\gmock.dir\\src\\gmock-all.cc.obj /Fdlib\\gmockpdb_debug_postfix-NOTFOUND.pdb /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googlemock\\src\\gmock-all.cc\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googlemock\\src\\gmock-all.cc",
+  "output": "GoogleTests\\Lib\\googlemock\\CMakeFiles\\gmock.dir\\src\\gmock-all.cc.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googlemock\\include\" -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googlemock\" -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\\include\" -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\" /DWIN32 /D_WINDOWS  /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /FoGoogleTests\\Lib\\googlemock\\CMakeFiles\\gmock_main.dir\\__\\googletest\\src\\gtest-all.cc.obj /Fdlib\\gmock_mainpdb_debug_postfix-NOTFOUND.pdb /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\\src\\gtest-all.cc\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\\src\\gtest-all.cc",
+  "output": "GoogleTests\\Lib\\googlemock\\CMakeFiles\\gmock_main.dir\\__\\googletest\\src\\gtest-all.cc.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googlemock\\include\" -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googlemock\" -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\\include\" -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\" /DWIN32 /D_WINDOWS  /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /FoGoogleTests\\Lib\\googlemock\\CMakeFiles\\gmock_main.dir\\src\\gmock-all.cc.obj /Fdlib\\gmock_mainpdb_debug_postfix-NOTFOUND.pdb /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googlemock\\src\\gmock-all.cc\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googlemock\\src\\gmock-all.cc",
+  "output": "GoogleTests\\Lib\\googlemock\\CMakeFiles\\gmock_main.dir\\src\\gmock-all.cc.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googlemock\\include\" -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googlemock\" -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\\include\" -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\" /DWIN32 /D_WINDOWS  /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /FoGoogleTests\\Lib\\googlemock\\CMakeFiles\\gmock_main.dir\\src\\gmock_main.cc.obj /Fdlib\\gmock_mainpdb_debug_postfix-NOTFOUND.pdb /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googlemock\\src\\gmock_main.cc\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googlemock\\src\\gmock_main.cc",
+  "output": "GoogleTests\\Lib\\googlemock\\CMakeFiles\\gmock_main.dir\\src\\gmock_main.cc.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\\include\" -I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\" /DWIN32 /D_WINDOWS  /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /FoGoogleTests\\Lib\\googletest\\CMakeFiles\\gtest.dir\\src\\gtest-all.cc.obj /Fdlib\\gtestpdb_debug_postfix-NOTFOUND.pdb /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\\src\\gtest-all.cc\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\\src\\gtest-all.cc",
+  "output": "GoogleTests\\Lib\\googletest\\CMakeFiles\\gtest.dir\\src\\gtest-all.cc.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP -external:I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\\include\" -external:I\"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\" -external:W0 /DWIN32 /D_WINDOWS  /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /FoGoogleTests\\Lib\\googletest\\CMakeFiles\\gtest_main.dir\\src\\gtest_main.cc.obj /Fdlib\\gtest_mainpdb_debug_postfix-NOTFOUND.pdb /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\\src\\gtest_main.cc\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\GoogleTests\\Lib\\googletest\\src\\gtest_main.cc",
+  "output": "GoogleTests\\Lib\\googletest\\CMakeFiles\\gtest_main.dir\\src\\gtest_main.cc.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoRepository-Car\\CMakeFiles\\CarRepositoryLib.dir\\CarRepository.cpp.obj /FdRepository-Car\\CMakeFiles\\CarRepositoryLib.dir\\CarRepositoryLib.pdb /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Repository-Car\\CarRepository.cpp\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Repository-Car\\CarRepository.cpp",
+  "output": "Repository-Car\\CMakeFiles\\CarRepositoryLib.dir\\CarRepository.cpp.obj"
+},
+{
+  "directory": "C:/Users/tudor/Documents/carsharing app/CarSharing-712-1/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x86\\cl.exe  /nologo /TP /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoDomain-Car\\CMakeFiles\\CarLib.dir\\Car.cpp.obj /FdDomain-Car\\CMakeFiles\\CarLib.dir\\CarLib.pdb /FS -c \"C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Domain-Car\\Car.cpp\"",
+  "file": "C:\\Users\\tudor\\Documents\\carsharing app\\CarSharing-712-1\\Domain-Car\\Car.cpp",
+  "output": "Domain-Car\\CMakeFiles\\CarLib.dir\\Car.cpp.obj"
+}
+]
