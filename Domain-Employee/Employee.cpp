@@ -68,3 +68,12 @@ double Employee::getSalary() const {
 void Employee::setSalary(double salary) {
     salary_ = salary;
 }
+
+//Functii noi adaugate M:
+const string &Employee::getBirthDate() const {
+    return birthDate_;
+}
+
+void Employee::setBirthDate(const string &birthDate) {
+    birthDate_ = birthDate;
+}

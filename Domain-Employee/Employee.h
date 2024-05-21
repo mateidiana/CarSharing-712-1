@@ -23,6 +23,7 @@ private:
     string address_;
     string remarks_;
     double salary_;
+    string birthDate_;//Adaugat M
 
 
 public:
@@ -67,6 +68,10 @@ public:
     double getSalary() const;
 
     void setSalary(double salary);
+
+    //Functii adaugate M:
+    const string &getBirthDate() const;
+    void setBirthDate(const string &birthDate);
 
 };
 
