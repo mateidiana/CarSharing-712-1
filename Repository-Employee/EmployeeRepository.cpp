@@ -57,3 +57,29 @@ void EmployeeRepository::resetPassword(Employee &employee, string newPassword) {
 void EmployeeRepository::startData() {
 
 }
+
+// Funcții Adaugate M:
+vector<Employee> EmployeeRepository::getAllEmployees() const {
+    vector<Employee> sortedEmployees = employees_;
+    sort(sortedEmployees.begin(), sortedEmployees.end(), [](const Employee &a, const Employee &b) {
+        return a.getName() < b.getName() || (a.getName() == b.getName() && a.getLastName() < b.getLastName());
+    });
+    return sortedEmployees;
+}
+
+vector<Employee> EmployeeRepository::searchEmployeesByNameAndLastName(const string &name, const string &lastName) const {
+    vector<Employee> result;
+    copy_if(employees_.begin(), employees_.end(), back_inserter(result), [&name, &lastName](const Employee &e) {
+        return e.getName() == name && e.getLastName() == lastName;
+    });
+    return result;
+}
+
+vector<Employee> EmployeeRepository::searchEmployeesByBirthDateRange(const string &startDate, const string &endDate) const {
+    vector<Employee> result;
+    copy_if(employees_.begin(), employees_.end(), back_inserter(result), [&startDate, &endDate](const Employee &e) {
+        string birthDate = e.getBirthDate();
+        return birthDate >= startDate && birthDate <= endDate;
+    });
+    return result;
+}

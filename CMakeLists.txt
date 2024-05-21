@@ -24,4 +24,6 @@ add_executable(CarSharing_712_1 main.cpp
         Repository-Car/CarRepository.h
         Repository-Car/CarRepository.cpp
         Controller-Autos/control.h
-        Controller-Autos/control.cpp)
+        Controller-Autos/control.cpp
+        UI-Employee/EmployeeUI.h
+        UI-Employee/EmployeeUI.cpp)

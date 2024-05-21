@@ -33,6 +33,12 @@ public:
     void removeEmployee(const string &email);
 
     void removeAdmin(const string &email);
+
+    //Functii noi adaugate
+
+    vector<Employee> getAllEmployees() const;
+    vector<Employee> searchEmployeesByNameAndLastName(const string &name, const string &lastName) const;
+    vector<Employee> searchEmployeesByBirthDateRange(const string &startDate, const string &endDate) const;
 };
 
 
