@@ -84,6 +84,10 @@ void Customer::setId(const string& id) {
     id_ = id;
 }
 
+bool Customer::setGdprDeleted(bool gdprDeleted) {
+    gdprDeleted_ = gdprDeleted;
+}
+
 string Customer::getOrderedCar() const {
     return orderedCar_;
 }
