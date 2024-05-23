@@ -52,7 +52,6 @@ public:
     void setPhoneNumber(const string& phoneNumber);
     void setAddress(const string& address);
     void setRemarks(const string& remarks);
-    void setGdprDeleted(bool gdprDeleted);
 
     string getOrderedCar() const;
     Date getOrderDate() const;

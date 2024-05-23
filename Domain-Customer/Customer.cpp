@@ -79,9 +79,6 @@ void Customer::setRemarks(const string& remarks) {
     remarks_ = remarks;
 }
 
-void Customer::setGdprDeleted(bool gdprDeleted) {
-    gdprDeleted_ = gdprDeleted;
-}
 
 void Customer::setId(const string& id) {
     id_ = id;

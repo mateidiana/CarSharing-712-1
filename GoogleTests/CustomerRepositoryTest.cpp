@@ -65,3 +65,15 @@ TEST_F(CustomerRepositoryTest, AnonymizeCustomer_NotEmployee) {
     auto customers = repository.getAll();
     ASSERT_EQ(customers.at(0).getName(), "John");
 }
+
+TEST_F(CustomerRepositoryTest, AnonymizeCustomer_Success) {
+    ASSERT_NO_THROW(repository.anonymizeCustomer(customer1, true));
+    auto customers = repository.getAll();
+    ASSERT_EQ(customers.at(0).getName(), "Customer-1");
+    ASSERT_EQ(customers.at(0).getlastName(), "Unknown");
+    ASSERT_EQ(customers.at(0).getEmail(), "");
+    ASSERT_EQ(customers.at(0).getPhoneNumber(), "");
+    ASSERT_EQ(customers.at(0).getAddress(), "");
+    ASSERT_EQ(customers.at(0).getRemarks(), "");
+    ASSERT_TRUE(customers.at(0).getGdprDeleted());
+}
