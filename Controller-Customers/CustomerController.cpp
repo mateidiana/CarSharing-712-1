@@ -11,11 +11,11 @@
 CustomerController::CustomerController(CustomerRepository customerRepo) : customerRepo(std:: move(customerRepo)) {}
 
 void CustomerController::addCustomer(const std::string &id, const std::string &name, const std::string &lastName,
-                                     const std::string &email, const std::string &phoneNumber,
+                                     const std::string &email, const std::string &password, const std::string &phoneNumber,
                                      const std::string &address, const std::string &remarks, bool gdprDeleted, bool isEmployee) {
 
 
-        Customer addedCustomer(id,name,lastName,email,phoneNumber,address,remarks,gdprDeleted);
+        Customer addedCustomer(id,name,lastName,email,password,phoneNumber,address,remarks,gdprDeleted);
         customerRepo.createCustomer(addedCustomer,isEmployee);
 
 }
@@ -49,14 +49,14 @@ vector<Customer> CustomerController::getAll() {
     return allCustomers;
 }
 
-vector<Customer> CustomerController::findByEmail(std::string &email) {
+Customer CustomerController::findByEmail(std::string &email) {
     vector<Customer> foundCustomers;
     for (const Customer &customer: customerRepo.getAll()) {
 
         if (customer.getEmail() == email)
             foundCustomers.push_back(customer);
     }
-    return foundCustomers;
+    return foundCustomers[0];
 }
 
 vector<Customer> CustomerController::findByPhone(std::string &phoneNumber) {
@@ -100,3 +100,37 @@ vector<Customer> CustomerController::findByOrderedCar(std::string &orderedCar) {
     sort(foundCustomers.begin(),foundCustomers.end(), compareCarOrderDate);
     return foundCustomers;
 }
+
+
+void CustomerController::changePassword(std::string &email, const std::string &newpassword, const std::string &password) {
+
+    Customer customer=this->findByEmail(email);
+
+    if(customer.getId().empty()){
+        throw runtime_error("Customer not found");
+    }
+
+    if (!customer.authenticate(email, password)){
+        throw runtime_error("Unauthorized access");
+    }
+    customer.setPassword(newpassword);
+    customerRepo.modifyCustomer(customer);
+
+}
+
+void CustomerController::changeRemarks(std::string& email, const std::string& newRemarks, const std::string& password) {
+
+    Customer customer = this->findByEmail(email);
+
+    if (customer.getId().empty()) {
+        throw runtime_error("Customer not found");
+    }
+
+    if (!customer.authenticate(email,password)) {
+        throw runtime_error("Unauthorized access");
+    }
+    customer.setRemarks(newRemarks);
+    customerRepo.modifyCustomer(customer);
+
+}
+

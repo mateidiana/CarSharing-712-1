@@ -12,18 +12,38 @@
 class EmployeeRepository{
 
 private:
+
     vector<Employee> employees_;
-    void startData();
+    vector<Admin> admins_;
 
 public:
-    explicit EmployeeRepository(const vector<Employee> &employees);
 
-    void viewSalary(Employee &employee, bool isAdmin);
-    void adjustSalary(Employee &employee, double newSalary, bool isAdmin);
-    void assignAdminRights(Employee &employee, bool isAdmin);
-    void resetPassword(Employee &employee, string newPassword, bool isAdmin);
-    void removeAdminRights(Employee &employee, bool isAdmin);
+    EmployeeRepository(const vector<Employee> &employees_, const vector<Admin> &admins_) : employees_(employees_), admins_(admins_) {};
+    void viewSalary(Employee &employee);
+    void adjustSalary(Employee &employee, double newSalary);
+    void assignAdminRights(Employee &employee);
+    void resetPassword(Employee &employee, string newPassword);
+    void removeAdminRights(Admin &admin);
+    void addAdmin(Admin &admin);
+    void addEmployee(Employee &employee);
+    void removeEmployee(const string &email);
+    void removeAdmin(const string &email);
+
+    //Functii noi adaugate
+
+    vector<Employee> getAllEmployees() const;
+    vector<Employee> searchEmployeesByNameAndLastName(const string &name, const string &lastName) const;
+    vector<Employee> searchEmployeesByBirthDateRange(const string &startDate, const string &endDate) const;
 };
 
+    //Matei Dana-Maria
+    void setupUnitTests();
+    //Matei Dana-Maria
+    void startData();
+    //Matei Dana-Maria
+    Employee* searchEmployeeByAbbreviation(const std::string &abbreviation);
+    //Matei Dana-Maria
+    Employee* searchEmployeeByEmail(const std::string &email);
+};
 
 #endif //CARSHARING_712_1_EMPLOYEEREPOSITORY_H

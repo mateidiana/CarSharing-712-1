@@ -32,8 +32,8 @@ private:
     bool hasOrderedCar_= false;
 
 public:
-    Customer(string password, string id, string name, string lastName, string email,
-             string phoneNumber, string address, string remarks, bool gdprDeleted);
+    Customer(string id, string name, string lastName, string email,
+             string phoneNumber, string address, string remarks, bool gdprDeleted,string password);
 
     string getPassword() const;
     string getId() const;

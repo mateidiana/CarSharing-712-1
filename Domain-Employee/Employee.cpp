@@ -4,13 +4,6 @@
 
 #include "Employee.h"
 
-Employee::Employee(string name, string lastName, string email, string position, string abbreviation,
-                   string phoneNumber, string address, string remarks, double salary, string password): name_(name),
-                   lastName_(lastName), email_(email), position_(position), abbreviation_(abbreviation),
-                   phoneNumber_(phoneNumber), address_(address), remarks_(remarks), salary_(salary), password_(password) {
-
-}
-
 const string &Employee::getName() const {
     return name_;
 }
@@ -19,13 +12,6 @@ void Employee::setName(const string &name) {
     name_ = name;
 }
 
-const string &Employee::getEmail() const {
-    return email_;
-}
-
-void Employee::setEmail(const string &email) {
-    email_ = email;
-}
 
 const string &Employee::getLastName() const {
     return lastName_;
@@ -83,12 +69,11 @@ void Employee::setSalary(double salary) {
     salary_ = salary;
 }
 
-const string &Employee::getPassword() const {
-    return password_;
+//Functii noi adaugate M:
+const string &Employee::getBirthDate() const {
+    return birthDate_;
 }
 
-void Employee::setPassword(const string &password) {
-    password_ = password;
+void Employee::setBirthDate(const string &birthDate) {
+    birthDate_ = birthDate;
 }
-
-

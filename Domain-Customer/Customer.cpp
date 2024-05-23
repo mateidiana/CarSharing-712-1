@@ -4,8 +4,8 @@
 
 #include "Customer.h"
 
-Customer::Customer(string password, string id, string name, string lastName, string email,
-                   string phoneNumber,string address,string remarks, bool gdprDeleted)
+Customer::Customer(string id, string name, string lastName, string email,
+                   string phoneNumber,string address,string remarks, bool gdprDeleted,string password)
         : password_(password), id_(id), name_(name), lastName_(lastName), email_(email), phoneNumber_(phoneNumber),
           address_(address), remarks_(remarks), gdprDeleted_(gdprDeleted) {}
 
