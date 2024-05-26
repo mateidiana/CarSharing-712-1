@@ -3,6 +3,7 @@
 //
 
 #include "EmployeeRepository.h"
+#include "Admin.h"
 #include <algorithm>
 
 void EmployeeRepository::adjustSalary(Employee &employee, double newSalary) {
@@ -18,7 +19,8 @@ void EmployeeRepository::addAdmin(Admin &admin) {
 }
 
 void EmployeeRepository::removeAdmin(const string &email) {
-
+    admins_.erase(std::remove_if(admins_.begin(), admins_.end(),
+                                    [&email](const Admin& e) { return e.getEmail() == email; }), admins_.end());
 }
 
 void EmployeeRepository::addEmployee(Employee &employee) {
@@ -26,21 +28,21 @@ void EmployeeRepository::addEmployee(Employee &employee) {
 }
 
 void EmployeeRepository::removeEmployee(const string &email) {
-
+    employees_.erase(std::remove_if(employees_.begin(), employees_.end(),
+                                   [&email](const Employee& e) { return e.getEmail() == email; }), employees_.end());
 }
 
 void EmployeeRepository::removeAdminRights(Admin &admin) {
     Employee employee(admin.getEmail(), admin.getPassword(), admin.getName(),
                       admin.getLastName(), admin.getPosition(), admin.getAbbreviation(),
                       admin.getPhoneNumber(), admin.getAddress(), admin.getRemarks(),
-                      admin.getSalary()); //intrebare aici
+                      admin.getSalary(), admin.getBirthDate());
+    addEmployee(employee);
+    removeAdmin(admin.getEmail());
 }
 
 void EmployeeRepository::assignAdminRights(Employee &employee) {
-    Admin admin(employee.getEmail(), employee.getPassword(), employee.getName(),
-                employee.getLastName(), employee.getPosition(), employee.getAbbreviation(),
-                employee.getPhoneNumber(), employee.getAddress(), employee.getRemarks(),
-                employee.getSalary(), *this); //intrebare aici
+    Admin admin(employee, *this);
     addAdmin(admin);
     removeEmployee(employee.getEmail());
 }

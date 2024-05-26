@@ -13,7 +13,7 @@ using namespace std;
 
 class Employee : public User {
 
-private:
+protected:
 
     string name_;
     string lastName_;
@@ -32,46 +32,46 @@ public:
              const string& name, const string& lastName,
              const string& position, const string& abbreviation,
              const string& phoneNumber, const string& address,
-             const string& remarks, double salary)
+             const string& remarks, double salary, const string& birthDate)
             : User(email, password), name_(name), lastName_(lastName), position_(position),
               abbreviation_(abbreviation), phoneNumber_(phoneNumber), address_(address),
-              remarks_(remarks), salary_(salary) {}
+              remarks_(remarks), salary_(salary),  birthDate_(birthDate){}
 
-    const string &getRemarks() const;
+    virtual const string &getRemarks() const;
 
-    void setRemarks(const string &remarks);
+    virtual void setRemarks(const string &remarks);
 
-    const string &getAddress() const;
+    virtual const string &getAddress() const;
 
-    void setAddress(const string &address);
+    virtual void setAddress(const string &address);
 
-    const string &getPhoneNumber() const;
+    virtual const string &getPhoneNumber() const;
 
-    void setPhoneNumber(const string &phoneNumber);
+    virtual void setPhoneNumber(const string &phoneNumber);
 
-    const string &getAbbreviation() const;
+    virtual const string &getAbbreviation() const;
 
-    void setAbbreviation(const string &abbreviation);
+    virtual void setAbbreviation(const string &abbreviation);
 
-    const string &getPosition() const;
+    virtual const string &getPosition() const;
 
-    void setPosition(const string &position);
+    virtual void setPosition(const string &position);
 
-    void setName(const string &name);
+    virtual void setName(const string &name);
 
-    const string &getName() const;
+    virtual const string &getName() const;
 
-    const string &getLastName() const;
+    virtual const string &getLastName() const;
 
-    void setLastName(const string &lastName);
+    virtual void setLastName(const string &lastName);
 
-    double getSalary() const;
+    virtual double getSalary() const;
 
-    void setSalary(double salary);
+    virtual void setSalary(double salary);
 
-    //Functii adaugate M:
-    const string &getBirthDate() const;
-    void setBirthDate(const string &birthDate);
+    virtual const string &getBirthDate() const;
+
+    virtual void setBirthDate(const string &birthDate);
 
 };
 
