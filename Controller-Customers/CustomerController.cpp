@@ -15,6 +15,17 @@ void CustomerController::addCustomer(const std::string &id, const std::string &n
                                      const std::string &address, const std::string &remarks, bool gdprDeleted, bool isEmployee) {
 
 
+    if (!gdprDeleted) {
+        if (id == "" || name == "" || lastName == "" || phoneNumber == "" || email == "" || password == "" ||
+            address == "") {
+            throw runtime_error(
+                    "The gdpr is false. Please complete all the requested fields (id, name, lastName, phoneNumber, email, password. address).");
+        }
+    } else {
+        if (name == "" || lastName == "") {
+            throw runtime_error("The name and the lastName are mandatory.");
+        }
+    }
         Customer addedCustomer(id,name,lastName,email,password,phoneNumber,address,remarks,gdprDeleted);
         customerRepo.createCustomer(addedCustomer,isEmployee);
 
@@ -126,11 +137,53 @@ void CustomerController::changeRemarks(std::string& email, const std::string& ne
         throw runtime_error("Customer not found");
     }
 
-    if (!customer.authenticate(email,password)) {
+    if (!customer.authenticate(email, password)) {
         throw runtime_error("Unauthorized access");
     }
     customer.setRemarks(newRemarks);
     customerRepo.modifyCustomer(customer);
 
 }
+
+bool CustomerController::isEmailTaken(const string &email) {
+    for (const Customer &customer: customerRepo.getAll()) {
+        if (customer.getEmail() == email)
+            return false;
+    }
+    return true;
+}
+
+bool CustomerController::isPhoneNumberValid(const string &phoneNumber) {
+    return false;
+    bool hasPlusAtStart = false;
+
+    if (!phoneNumber.empty() && phoneNumber[0] == '+') {
+        hasPlusAtStart = true;
+    }
+
+    for (char c: phoneNumber) {
+        if (!isdigit(c) && c != ' ') {
+            return false;
+        }
+    }
+
+    return (hasPlusAtStart && phoneNumber.length() > 1) || !hasPlusAtStart;
+}
+
+
+bool CustomerController::isEmailFormaValid(const string &email) {
+    bool hasAtSymbol = false;
+    bool hasDot = false;
+
+    for (char c: email) {
+        if (c == '@') {
+            hasAtSymbol = true;
+        } else if (c == '.') {
+            hasDot = true;
+        }
+    }
+
+    return hasAtSymbol && hasDot;
+}
+
 
