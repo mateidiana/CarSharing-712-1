@@ -54,8 +54,6 @@ void EmployeeRepository::resetPassword(Employee &employee, string newPassword) {
     std::cout << "Password reset for " << employee.getName() << std::endl;
 }
 
-void EmployeeRepository::startData() {}
-
 void EmployeeRepository::setupUnitTests() {}
 
 Employee* EmployeeRepository::searchEmployeeByAbbreviation(const std::string &abbreviation) {
@@ -74,6 +72,20 @@ Employee* EmployeeRepository::searchEmployeeByEmail(const std::string &email) {
         }
     }
     return nullptr;
+}
+
+void EmployeeRepository::startData() {
+    employees_.push_back(Employee("john.doe@mail.com", "password123", "John", "Doe", "Manager", "JD", "0714574456", "str. Viilor", "No remarks", 5000));
+    employees_.push_back(Employee("jane.smith@mail.com", "password123", "Jane", "Smith", "Engineer", "JS", "0764660912", "str. Trascaului", "No remarks", 6000));
+    employees_.push_back(Employee("maria.cooper@mail.com", "password123", "Maria", "Cooper", "Manager", "MC", "0735537908", "str. Ploiesti", "No remarks", 4000));
+    employees_.push_back(Employee("mara.smith@mail.com", "password123", "Mara", "Smith", "Manager", "MS", "0714482456", "str. Cireselor", "No remarks", 5000));
+    employees_.push_back(Employee("ion.lee@mail.com", "password123", "Ion", "Lee", "Engineer", "IL", "0764600912", "str. Motilor", "No remarks", 6000));
+    employees_.push_back(Employee("alex.sandu@mail.com", "password123", "Alex", "Sandu", "Manager", "AS", "0733475908", "str. Pasteur", "No remarks", 4000));
+    employees_.push_back(Employee("ana.matei@mail.com", "password123", "Ana", "Matei", "Manager", "AM", "0735537858", "str. Ploiesti", "No remarks", 4000));
+    employees_.push_back(Employee("mara.smith@mail.com", "password123", "Pavel", "Dobrescu", "Manager", "PD", "071632542456", "str. Cireselor", "No remarks", 5000));
+    employees_.push_back(Employee("ion.lee@mail.com", "password123", "Mariana", "Park", "Engineer", "MP", "0709600912", "str. Motilor", "No remarks", 6000));
+    employees_.push_back(Employee("alex.sandu@mail.com", "password123", "Alex", "Radulescu", "Manager", "AR", "0733477658", "str. Pasteur", "No remarks", 4000));
+    std::cout << "Data initialized." << std::endl;
 }
 
 // Funcții Adaugate M:

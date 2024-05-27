@@ -34,15 +34,14 @@ public:
     vector<Employee> getAllEmployees() const;
     vector<Employee> searchEmployeesByNameAndLastName(const string &name, const string &lastName) const;
     vector<Employee> searchEmployeesByBirthDateRange(const string &startDate, const string &endDate) const;
-};
 
     //Matei Dana-Maria
     void setupUnitTests();
     //Matei Dana-Maria
     void startData();
-    //Matei Dana-Maria
+    //Matei Dana-Maria -> M4.2
     Employee* searchEmployeeByAbbreviation(const std::string &abbreviation);
-    //Matei Dana-Maria
+    //Matei Dana-Maria -> M4.3
     Employee* searchEmployeeByEmail(const std::string &email);
 };
 
