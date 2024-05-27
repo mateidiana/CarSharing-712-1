@@ -17,7 +17,6 @@ private:
 
     vector<Employee> employees_;
     vector<Admin> admins_;
-    void startData();
 
 public:
 
@@ -43,8 +42,6 @@ public:
     vector<Employee> getAllEmployees() const;
 
     Employee *searchEmployeeByEmail(const string &email);
-
-    void setupUnitTests();
 
     Employee *searchEmployeeByAbbreviation(const string &abbreviation);
 };
