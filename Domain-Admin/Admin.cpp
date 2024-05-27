@@ -4,12 +4,12 @@
 
 #include "Admin.h"
 
-Admin::Admin(const Employee& employee, EmployeeRepository *employeeRepo)
-        : Employee(employee.getEmail(), employee.getPassword(),
-                   employee.getName(), employee.getLastName(),
-                   employee.getPosition(), employee.getAbbreviation(),
-                   employee.getPhoneNumber(), employee.getAddress(),
-                   employee.getRemarks(), employee.getSalary(), employee.getBirthDate()),
+Admin::Admin(const string& email, const string& password,
+             const string& name, const string& lastName,
+             const string& position, const string& abbreviation,
+             const string& phoneNumber, const string& address,
+             const string& remarks, double salary, const string& birthDate, EmployeeRepository *employeeRepo)
+        : Employee(email, password, name, lastName, position, abbreviation, phoneNumber, address, remarks, salary, birthDate),
                    employeeRepository((EmployeeRepository *)(employeeRepo)) {
 
 }
@@ -115,7 +115,7 @@ void Admin::setPassword(const string &password) {
 }
 
 const string &Admin::getBirthDate() const {
-    Employee::getBirthDate();
+    return Employee::getBirthDate();
 }
 void Admin::setBirthDate(const string &birthDate) {
     Employee::setBirthDate(birthDate);

@@ -7,7 +7,9 @@
 #include <vector>
 #include <stdexcept>
 #include "../Domain-Employee/Employee.h"
+class Employee;
 #include "../Domain-Admin/Admin.h"
+class Admin;
 
 class EmployeeRepository{
 
