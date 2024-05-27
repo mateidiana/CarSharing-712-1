@@ -5,7 +5,6 @@
 #include "EmployeeRepository.h"
 #include "Admin.h"
 #include <algorithm>
-#include "../Domain-Employee/Employee.h"
 
 void EmployeeRepository::adjustSalary(Employee &employee, double newSalary) {
     for (int i = 0; i < employees_.size(); i++)
