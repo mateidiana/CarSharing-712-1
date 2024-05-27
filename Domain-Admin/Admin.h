@@ -9,6 +9,7 @@
 #include <stdexcept>
 #include "../Domain-Employee/Employee.h"
 #include "../Repository-Employee/EmployeeRepository.h"
+class EmployeeRepository;
 
 using namespace std;
 
@@ -19,7 +20,10 @@ private:
     EmployeeRepository *employeeRepository;
 
 public:
-    Admin(const Employee& employee, EmployeeRepository *employeeRepo);
+    Admin(const string &email, const string &password, const string &name, const string &lastName,
+          const string &position, const string &abbreviation, const string &phoneNumber, const string &address,
+          const string &remarks, double salary, const string &birthDate, EmployeeRepository *employeeRepo);
+
 
     void viewEmployeeSalary(Employee &employee);
     void adjustEmployeeSalary(Employee &employee, double newSalary);

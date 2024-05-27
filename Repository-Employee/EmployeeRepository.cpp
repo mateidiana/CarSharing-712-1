@@ -10,7 +10,6 @@ void EmployeeRepository::adjustSalary(Employee &employee, double newSalary) {
     for (int i = 0; i < employees_.size(); i++)
         if (employee.getEmail() == employees_[i].getEmail()) {
             employee.setSalary(newSalary);
-            std::cout << "Salary adjusted for " << employee.getName() << std::endl;
         }
 }
 
@@ -42,7 +41,10 @@ void EmployeeRepository::removeAdminRights(Admin &admin) {
 }
 
 void EmployeeRepository::assignAdminRights(Employee &employee) {
-    Admin admin(employee, *this);
+    Admin admin(employee.getEmail(), employee.getPassword(), employee.getName(),
+                employee.getLastName(), employee.getPosition(), employee.getAbbreviation(),
+                employee.getPhoneNumber(), employee.getAddress(), employee.getRemarks(),
+                employee.getSalary(), employee.getBirthDate(), this);
     addAdmin(admin);
     removeEmployee(employee.getEmail());
 }
