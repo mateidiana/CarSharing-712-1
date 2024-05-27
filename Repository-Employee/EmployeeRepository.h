@@ -21,6 +21,10 @@ private:
 
 public:
 
+    //M5
+    Employee findById(int id);
+    bool updateEmployee(const Employee &employee);
+
     EmployeeRepository(const vector<Employee> &employees_, const vector<Admin> &admins_) : employees_(employees_), admins_(admins_) {};
     void viewSalary(Employee &employee);
     void adjustSalary(Employee &employee, double newSalary);

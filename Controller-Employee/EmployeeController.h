@@ -17,6 +17,12 @@ public:
 
     EmployeeController(EmployeeRepository &repository);
 
+//M5
+    //bool changePassword(int employeeId, const std::string &newPassword);
+    bool updateRemarks(int employeeId, const std::string &newRemarks);
+    bool login(const std::string &username, const std::string &password)
+
+
     void adjustSalary(Employee &employee, double newSalary) {
         repository_.adjustSalary(employee, newSalary);
     }
@@ -49,9 +55,12 @@ public:
         repository_.viewSalary(employee);
     }
 
-    void resetPassword(Employee &employee, std::string newPassword) {
-        repository_.resetPassword(employee, newPassword);
+    //m5
+    void resetPassword(Employee &employeeId, std::string newPassword) {
+        repository_.resetPassword(employeeId, newPassword);
     }
+
+
 
     Employee* searchEmployeeByAbbreviation(const std::string &abbreviation) {
         return repository_.searchEmployeeByAbbreviation(abbreviation);

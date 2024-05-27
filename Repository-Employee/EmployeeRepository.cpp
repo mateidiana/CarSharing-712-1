@@ -105,3 +105,23 @@ vector<Employee> EmployeeRepository::searchEmployeesByBirthDateRange(const strin
     });
     return result;
 }
+
+//m5
+Employee EmployeeRepository::findById(int id) {
+    for (const auto &employee : employees_) {
+        if (employee.getId() == id) {
+            return employee;
+        }
+    }
+    return Employee(-1, "", ""); // returneaza invalid daca nu l gaseste
+}
+
+bool EmployeeRepository::updateEmployee(const Employee &employee) {
+    for (auto &emp : employees_) {
+        if (emp.getId() == employee.getId()) {
+            emp = employee;
+            return true;
+        }
+    }
+    return false; // negasit
+}

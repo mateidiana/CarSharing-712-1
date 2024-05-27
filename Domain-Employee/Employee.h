@@ -15,6 +15,11 @@ using namespace std;
 class Employee : public User {
 
 protected:
+//m5
+    int id_;
+    string password_;
+    string remarks_;
+    string username_;
 
     string name_;
     string lastName_;
@@ -22,12 +27,17 @@ protected:
     string abbreviation_;
     string phoneNumber_;
     string address_;
-    string remarks_;
     double salary_;
     string birthDate_;//Adaugat M
 
 
 public:
+    //m5
+    int getId() const { return id_; }
+    void setPassword(const std::string &password) { password_ = password; }
+    void setRemarks(const std::string &remarks) { remarks_ = remarks; }
+
+    string getPassword() const { return password_; }
 
     Employee(const string& email, const string& password,
              const string& name, const string& lastName,
@@ -74,6 +84,7 @@ public:
 
     virtual void setBirthDate(const string &birthDate);
 
+    string getUsername() const;
 };
 
 #endif //CARSHARING_712_1_EMPLOYEE_H
