@@ -19,7 +19,7 @@ public:
     CustomerController(CustomerRepository customerRepo);
 
     void addCustomer(const string &id, const string &name, const string &lastName, const string &email, const string &password,
-                     const string &phoneNumber, const string &address, const string &remarks, bool gdprDeleted, bool isEmployee);
+                     const string &phoneNumber, const string &address, const string &remarks, bool gdprDeleted);
 
     void deleteCustomer(const string &deleteName, bool isEmployee);
 

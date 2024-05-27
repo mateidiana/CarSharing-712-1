@@ -29,7 +29,12 @@ add_executable(CarSharing_712_1 main.cpp
         Controller-Employee/EmployeeController.h
         Controller-Employee/EmployeeController.cpp
         UI-Employee/EmployeeUI.h
-        UI-Employee/EmployeeUI.cpp)
+        UI-Employee/EmployeeUI.cpp
+        ../UI-Customer/CustomerUI.h
+        ../UI-Customer/CustomerUI.cpp
+        UI-Customer/CustomerUI.h
+        UI-Customer/CustomerUI.h
+        UI-Customer/CustomerUI.cpp)
 
 
 target_link_libraries(CarSharing_712_1 CarRepositoryLib CarLib)
