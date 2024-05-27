@@ -18,8 +18,10 @@ public:
 
     CustomerController(CustomerRepository customerRepo);
 
-    void addCustomer(const string &id, const string &name, const string &lastName, const string &email, const string &password,
-                     const string &phoneNumber, const string &address, const string &remarks, bool gdprDeleted, bool isEmployee);
+    void addCustomer(const string &id, const string &name, const string &lastName, const string &email,
+                     const string &password,
+                     const string &phoneNumber, const string &address, const string &remarks, bool gdprDeleted,
+                     bool isEmployee);
 
     void deleteCustomer(const string &deleteName, bool isEmployee);
 
@@ -28,7 +30,6 @@ public:
     void changePassword(string &email, const std::string &newpassword, const std::string &password);
 
     void changeRemarks(string &email, const std::string &newRemarks, const std::string &password);
-
 
 
     vector<Customer> getAll();
@@ -42,6 +43,13 @@ public:
     vector<Customer> findByOrderedCar(string &orderedCar);
 
     static bool compareCarOrderDate(const Customer &customer1, const Customer &customer2);
+
+    bool isEmailTaken(const string &email);
+
+    bool isEmailFormatValid(const string &email);
+
+    bool isPhoneNumberValid(const string &phoneNumber);
+
 
 };
 
