@@ -62,21 +62,19 @@ void EmployeeRepository::resetPassword(Employee &employee, string newPassword) {
 void EmployeeRepository::setupUnitTests() {}
 
 Employee* EmployeeRepository::searchEmployeeByAbbreviation(const std::string &abbreviation) {
-    for (auto& employee : employees_) {
-        if (employee.getAbbreviation() == abbreviation) {
-            return &employee;
-        }
-    }
-    return nullptr;
+    auto it = std::find_if(employees_.begin(), employees_.end(),
+                           [&abbreviation](Employee& emp) {
+                               return emp.getAbbreviation() == abbreviation;
+                           });
+    return (it != employees_.end()) ? &(*it) : nullptr;
 }
 
 Employee* EmployeeRepository::searchEmployeeByEmail(const std::string &email) {
-    for (auto& employee : employees_) {
-        if (employee.getEmail() == email) {
-            return &employee;
-        }
-    }
-    return nullptr;
+    auto it = std::find_if(employees_.begin(), employees_.end(),
+                           [&email](Employee& emp) {
+                               return emp.getEmail() == email;
+                           });
+    return (it != employees_.end()) ? &(*it) : nullptr;
 }
 
 void EmployeeRepository::startData() {
