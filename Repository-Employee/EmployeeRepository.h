@@ -7,7 +7,9 @@
 #include <vector>
 #include <stdexcept>
 #include "../Domain-Employee/Employee.h"
+class Employee;
 #include "../Domain-Admin/Admin.h"
+class Admin;
 
 class EmployeeRepository{
 
@@ -15,6 +17,7 @@ private:
 
     vector<Employee> employees_;
     vector<Admin> admins_;
+    //void startData();
 
 public:
 
@@ -24,26 +27,30 @@ public:
     void assignAdminRights(Employee &employee);
     void resetPassword(Employee &employee, string newPassword);
     void removeAdminRights(Admin &admin);
+
     void addAdmin(Admin &admin);
+
     void addEmployee(Employee &employee);
+
     void removeEmployee(const string &email);
+
     void removeAdmin(const string &email);
 
-    //Functii noi adaugate
+    vector<Employee> searchEmployeesByBirthDateRange(const string &startDate, const string &endDate) const;
+
+    vector<Employee> searchEmployeesByNameAndLastName(const string &name, const string &lastName) const;
 
     vector<Employee> getAllEmployees() const;
-    vector<Employee> searchEmployeesByNameAndLastName(const string &name, const string &lastName) const;
-    vector<Employee> searchEmployeesByBirthDateRange(const string &startDate, const string &endDate) const;
-};
 
-    //Matei Dana-Maria
     void setupUnitTests();
-    //Matei Dana-Maria
-    void startData();
-    //Matei Dana-Maria
+
+    //Matei Dana-Maria -> M4.2
     Employee* searchEmployeeByAbbreviation(const std::string &abbreviation);
     //Matei Dana-Maria
+    void startData();
+    //Matei Dana-Maria -> M4.3
     Employee* searchEmployeeByEmail(const std::string &email);
 };
+
 
 #endif //CARSHARING_712_1_EMPLOYEEREPOSITORY_H
