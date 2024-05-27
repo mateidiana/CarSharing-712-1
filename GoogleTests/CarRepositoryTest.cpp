@@ -8,35 +8,54 @@ protected:
     Car car2 = Car("plate2", "Model2", "Brand2", 2001, 20000, 200.0, "Diesel", "Automatic", "Blue", "No remarks");
 
     void SetUp() override {
+        car1.setOrdered(false);
+        car2.setOrdered(false);
         repository.addCar(car1);
         repository.addCar(car2);
     }
 };
 
-TEST_F(CarRepositoryTest, AddCar) {
+TEST_F(CarRepositoryTest, AddCarIncreasesRepositorySize) {
+    size_t initialSize = repository.returnList().size();
     Car car3 = Car("plate3", "Model3", "Brand3", 2002, 30000, 300.0, "Electric", "Automatic", "Green", "No remarks");
     repository.addCar(car3);
-    // Unfortunately, we can't directly check if the car was added as the cars vector is private
-    // We can only assume it's working correctly if no exception is thrown
+    ASSERT_EQ(repository.returnList().size(), initialSize + 1);
 }
 
-TEST_F(CarRepositoryTest, UpdateCar) {
+TEST_F(CarRepositoryTest, UpdateCarChangesCarData) {
     Car newCarData = Car("plate1", "UpdatedModel", "UpdatedBrand", 2005, 15000, 150.0, "Hybrid", "Manual", "Yellow", "Updated remarks");
     repository.updateCar("plate1", newCarData);
-    // Again, we can't directly check if the car was updated as the cars vector is private
-    // We can only assume it's working correctly if no exception is thrown
+    auto cars = repository.returnList();
+    auto it = std::find_if(cars.begin(), cars.end(), [](const Car& car) {
+        return car.getLicensePlate() == "plate1";
+    });
+    ASSERT_NE(it, cars.end());
+    ASSERT_EQ(it->getModel(), "UpdatedModel");
+    ASSERT_EQ(it->getBrand(), "UpdatedBrand");
 }
 
-TEST_F(CarRepositoryTest, RemoveCar) {
+TEST_F(CarRepositoryTest, RemoveCarDecreasesRepositorySize) {
+    size_t initialSize = repository.returnList().size();
     ASSERT_NO_THROW(repository.removeCar("plate1"));
-    // Check that an exception is thrown when trying to remove the same car again
-    ASSERT_THROW(repository.removeCar("plate1"), std::runtime_error);
+    ASSERT_EQ(repository.returnList().size(), initialSize - 1);
 }
 
-TEST_F(CarRepositoryTest, DeactivateCar) {
+TEST_F(CarRepositoryTest, RemoveCarThrowsExceptionWhenCarNotFound) {
+    ASSERT_THROW(repository.removeCar("nonexistent_plate"), std::runtime_error);
+}
+
+TEST_F(CarRepositoryTest, DeactivateCarChangesCarStatus) {
     ASSERT_NO_THROW(repository.deactivateCar("plate2"));
-    // Check that an exception is thrown when trying to deactivate the same car again
-    ASSERT_THROW(repository.deactivateCar("plate2"), std::runtime_error);
+    auto cars = repository.returnList();
+    auto it = std::find_if(cars.begin(), cars.end(), [](const Car& car) {
+        return car.getLicensePlate() == "plate2";
+    });
+    ASSERT_NE(it, cars.end());
+    ASSERT_FALSE(it->isActive());
+}
+
+TEST_F(CarRepositoryTest, DeactivateCarThrowsExceptionWhenCarNotFound) {
+    ASSERT_THROW(repository.deactivateCar("nonexistent_plate"), std::runtime_error);
 }
 
 // Matei Dana-Maria

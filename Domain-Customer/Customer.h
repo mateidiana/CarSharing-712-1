@@ -21,11 +21,9 @@ private:
     string id_;
     string name_;
     string lastName_;
-    //string email_;
     string phoneNumber_;
     string address_;
     string remarks_;
-    //string password_;
     bool gdprDeleted_;
 
     string orderedCar_;
@@ -33,9 +31,10 @@ private:
     bool hasOrderedCar_= false;
 
 public:
-    Customer(string id, string name, string lastName, string email, string password,
-             string phoneNumber, string address, string remarks, bool gdprDeleted);
+    Customer(string id, string name, string lastName, string email,
+             string phoneNumber, string address, string remarks, bool gdprDeleted,string password);
 
+    string getPassword() const;
     string getId() const;
     string getName() const;
     string getlastName() const;
@@ -45,15 +44,14 @@ public:
     string getRemarks() const;
     bool getGdprDeleted() const;
     bool hasOrderedCar() const;
+    void setPassword(const string& password);
     void setName(const string& name);
     void setlastName(const string& lastName);
     void setEmail(const string& email);
-    void setPassword(const string& password);
     void setPhoneNumber(const string& phoneNumber);
     void setAddress(const string& address);
     void setRemarks(const string& remarks);
-    void setGdprDeleted(bool gdprDeleted);
-
+    bool setGdprDeleted(bool gdprDeleted);
 
     string getOrderedCar() const;
     Date getOrderDate() const;

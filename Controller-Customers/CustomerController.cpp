@@ -15,7 +15,7 @@ void CustomerController::addCustomer(const std::string &id, const std::string &n
                                      const std::string &address, const std::string &remarks, bool gdprDeleted, bool isEmployee) {
 
 
-        Customer addedCustomer(id,name,lastName,email,password,phoneNumber,address,remarks,gdprDeleted);
+        Customer addedCustomer(id,name,lastName,email,phoneNumber,address,remarks,gdprDeleted,password);
         customerRepo.createCustomer(addedCustomer,isEmployee);
 
 }
