@@ -7,6 +7,9 @@
 Customer::Customer(string id, string name, string lastName, string email,
                    string phoneNumber,string address,string remarks, bool gdprDeleted,string password)
         : password_(password), id_(id), name_(name), lastName_(lastName), email_(email), phoneNumber_(phoneNumber),
+Customer::Customer(string id, string name, string lastName, string email, string password,
+                   string phoneNumber, string address, string remarks, bool gdprDeleted)
+        : id_(id), name_(name), lastName_(lastName), email_(email), password_(password), phoneNumber_(phoneNumber),
           address_(address), remarks_(remarks), gdprDeleted_(gdprDeleted) {}
 
 
@@ -51,10 +54,6 @@ bool Customer::hasOrderedCar() const {
     return false;
 }
 
-void Customer::setPassword(const string &password) {
-    password_ = password;
-}
-
 void Customer::setName(const string& name) {
     name_ = name;
 }
@@ -65,6 +64,10 @@ void Customer::setlastName(const string& lastName) {
 
 void Customer::setEmail(const string& email) {
     email_ = email;
+}
+
+void Customer::setPassword(const std::string &password) {
+    password_=password;
 }
 
 void Customer::setPhoneNumber(const string& phoneNumber) {
@@ -79,13 +82,12 @@ void Customer::setRemarks(const string& remarks) {
     remarks_ = remarks;
 }
 
+void Customer::setGdprDeleted(bool gdprDeleted) {
+    gdprDeleted_ = gdprDeleted;
+}
 
 void Customer::setId(const string& id) {
     id_ = id;
-}
-
-bool Customer::setGdprDeleted(bool gdprDeleted) {
-    gdprDeleted_ = gdprDeleted;
 }
 
 string Customer::getOrderedCar() const {
@@ -100,7 +102,7 @@ bool Customer::getHasOrderedCar() const {
     return hasOrderedCar_;
 }
 
-void Customer::setOrderedCar(const string &orderedCar) {
+void Customer::setOrderedCar(const std::string &orderedCar) {
     orderedCar_=orderedCar;
 }
 

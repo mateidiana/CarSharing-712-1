@@ -11,6 +11,11 @@ add_subdirectory(Domain-Customer)
 
 add_executable(CarSharing_712_1 main.cpp
         Controller/Controller.h
+        Domain-Customer/Customer.h
+        Domain-Customer/Customer.cpp
+        Domain-Customer/Customer.cpp
+        Repository-Customers/CustomerRepository.h
+        Repository-Customers/CustomerRepository.cpp
         Controller/Controller.cpp
         Domain-Employee/Employee.h
         Domain-Employee/Employee.cpp
@@ -33,3 +38,6 @@ add_executable(CarSharing_712_1 main.cpp
 
 
 target_link_libraries(CarSharing_712_1 CarRepositoryLib CarLib)
+        Repository-Car/CarRepository.cpp
+        Domain-Order/Order.h
+        Domain-Order/Order.cpp)
