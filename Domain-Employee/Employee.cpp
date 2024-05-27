@@ -9,7 +9,6 @@ string Employee::getUsername() const {
     return name_;
 }
 
-
 void Employee::setName(const string &name) {
     name_ = name;
 }
