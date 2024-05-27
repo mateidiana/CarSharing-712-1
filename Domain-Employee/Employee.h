@@ -8,6 +8,7 @@
 #include <string>
 #include <stdexcept>
 #include "../Domain-User/User.h"
+class User;
 
 using namespace std;
 
@@ -35,7 +36,7 @@ public:
              const string& remarks, double salary, const string& birthDate)
             : User(email, password), name_(name), lastName_(lastName), position_(position),
               abbreviation_(abbreviation), phoneNumber_(phoneNumber), address_(address),
-              remarks_(remarks), salary_(salary),  birthDate_(birthDate){}
+              remarks_(remarks), salary_(salary), birthDate_(birthDate){}
 
     virtual const string &getRemarks() const;
 
