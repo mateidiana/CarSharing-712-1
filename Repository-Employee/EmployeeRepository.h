@@ -33,12 +33,18 @@ public:
     std::vector<Employee> searchEmployeesByBirthDateRange(const std::string &startDate, const std::string &endDate) const;
     std::vector<Employee> searchEmployeesByNameAndLastName(const std::string &name, const std::string &lastName) const;
     std::vector<Employee> getAllEmployees() const;
+    vector<Employee> searchEmployeesByNameAndLastName(const string &name, const string &lastName) const;
 
-    Employee* searchEmployeeByEmail(const std::string &email);
-    Employee* searchEmployeeByAbbreviation(const std::string &abbreviation);
+    vector<Employee> getAllEmployees() const;
 
     void setupUnitTests();
+
+    //Matei Dana-Maria -> M4.2
+    Employee* searchEmployeeByAbbreviation(const std::string &abbreviation);
+    //Matei Dana-Maria
     void startData();
+    //Matei Dana-Maria -> M4.3
+    Employee* searchEmployeeByEmail(const std::string &email);
 };
 
 #endif //CARSHARING_712_1_EMPLOYEEREPOSITORY_H

@@ -43,6 +43,12 @@ public:
 
     static bool compareCarOrderDate(const Customer &customer1, const Customer &customer2);
 
+    bool isEmailTaken(const string& email);
+
+    bool isEmailFormaValid(const string& email);
+
+    bool isPhoneNumberValid(const string& phoneNumber);
+
 };
 
 
