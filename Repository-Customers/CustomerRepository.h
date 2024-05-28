@@ -19,13 +19,18 @@ private:
     void startData();
 
 public:
-    CustomerRepository();
-    void createCustomer(const Customer& customer, bool isEmployee);
-    void modifyCustomer(const Customer& customer);
-    void deleteCustomer(const Customer& customer, bool isEmployee);
-    void anonymizeCustomer(const Customer& customer, bool isEmployee);
-    void setOrder(const Customer& customer, const string car, Date date, bool isEmployee);
+    CustomerRepository(const std::vector<Customer>);
+    void createCustomer(const Customer& customer);
+    void modifyCustomer(Customer& customer);
+    void deleteCustomer(Customer& customer);
+    void anonymizeCustomer( Customer& customer);
+    void modifyRemark(const Customer& customer);
+    void modifyPassword(const Customer& customer);
+    void setOrder(Customer& customer, const string car, Date date);
     vector<Customer> getAll();
+
+
+
 };
 
 

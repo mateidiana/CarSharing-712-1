@@ -18,8 +18,11 @@ public:
 
     CustomerController(CustomerRepository customerRepo);
 
-    void addCustomer(const string &id, const string &name, const string &lastName, const string &email, const string &password,
-                     const string &phoneNumber, const string &address, const string &remarks, bool gdprDeleted);
+   void addCustomer(const std::string &id, const std::string &name, const std::string &lastName,
+                    const std::string &email, const std::string &password,
+                    const std::string &phoneNumber,
+                    const std::string &address, const std::string &remarks, bool gdprDeleted,
+                    bool isEmployee);
 
     void deleteCustomer(const string &deleteName, bool isEmployee);
 
@@ -49,6 +52,7 @@ public:
 
     bool isPhoneNumberValid(const string& phoneNumber);
 
+   void addToFavourites(std::string &email, const Car &car, const std::string &password);
 };
 
 

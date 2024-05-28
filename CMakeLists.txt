@@ -18,24 +18,18 @@ add_executable(CarSharing_712_1 main.cpp
         Repository-Employee/EmployeeRepository.cpp
         Domain-Admin/Admin.h
         Domain-Admin/Admin.cpp
-        Controller-Customers/CustomerController.h
-        Controller-Customers/CustomerController.cpp
         Domain-Car/Car.h
         Domain-Car/Car.cpp
-        Repository-Car/CarRepository.h
-        Repository-Car/CarRepository.cpp
         Controller-Autos/control.h
         Controller-Autos/control.cpp
         Controller-Employee/EmployeeController.h
         Controller-Employee/EmployeeController.cpp
         UI-Employee/EmployeeUI.h
         UI-Employee/EmployeeUI.cpp
-        ../UI-Customer/CustomerUI.h
-        ../UI-Customer/CustomerUI.cpp
         UI-Customer/CustomerUI.h
         UI-Customer/CustomerUI.h
         UI-Customer/CustomerUI.cpp
         Domain-Order/Order.h)
 
 
-target_link_libraries(CarSharing_712_1 CarRepositoryLib CarLib)
+target_link_libraries(CarSharing_712_1 CarRepositoryLib CarLib CustomerControllerLib CustomerRepoLib CustomerLib)

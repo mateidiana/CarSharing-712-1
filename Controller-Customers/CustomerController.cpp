@@ -7,7 +7,7 @@
 #include <utility>
 #include <algorithm>
 #include <cstring>
-#include "..\Domain-Customer\Customer.h"
+#include "../Domain-Customer/Customer.h"
 
 CustomerController::CustomerController(CustomerRepository customerRepo) : customerRepo(std::move(customerRepo)) {}
 
@@ -17,20 +17,18 @@ void CustomerController::addCustomer(const std::string &id, const std::string &n
                                      const std::string &address, const std::string &remarks, bool gdprDeleted,
                                      bool isEmployee) {
 
-
     if (!gdprDeleted) {
-        if (id == "" || name == "" || lastName == "" || phoneNumber == "" || email == "" || password == "" ||
-            address == "") {
-            throw runtime_error(
-                    "The gdpr is false. Please complete all the requested fields (id, name, lastName, phoneNumber, email, password. address).");
+        if (id.empty() || name.empty() || lastName.empty() || phoneNumber.empty() || email.empty() || password.empty() ||
+            address.empty()) {
+            throw std::runtime_error("The gdpr is false. Please complete all the requested fields (id, name, lastName, phoneNumber, email, password. address).");
         }
     } else {
-        if (name == "" || lastName == "") {
-            throw runtime_error("The name and the lastName are mandatory.");
+        if (name.empty() || lastName.empty()) {
+            throw std::runtime_error("The name and the lastName are mandatory.");
         }
     }
 
-    Customer addedCustomer(id, name, lastName, email, phoneNumber, address, remarks, gdprDeleted, password);
+    Customer addedCustomer(id, name, lastName, email, password, phoneNumber, address, remarks, gdprDeleted);
     customerRepo.createCustomer(addedCustomer, isEmployee);
 
 }

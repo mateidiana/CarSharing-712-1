@@ -9,7 +9,8 @@
 #include <string>
 #include <stdexcept>
 #include <vector>
-#include "..\Domain-Car\Car.h"
+#include "../Domain-Car/Car.h"
+#include "../Domain-User/User.h"
 
 using namespace std;
 
@@ -17,16 +18,14 @@ struct Date {
     int day, month, year;
 };
 
-class Customer {
+class Customer:public User {
 private:
     string id_;
     string name_;
     string lastName_;
-    string email_;
     string phoneNumber_;
     string address_;
     string remarks_;
-    string password_;
     bool gdprDeleted_;
 
     string orderedCar_;
@@ -38,13 +37,13 @@ private:
 
 public:
     Customer(string id, string name, string lastName, string email, string password,
-             string phoneNumber, string address, string remarks, bool gdprDeleted);
+             string phoneNumber, string address, string remarks, bool gdprDeleted): User(email,password), id_(id),name_(name),lastName_(lastName),phoneNumber_(phoneNumber),address_(address),remarks_(remarks),gdprDeleted_(gdprDeleted){};
 
     string getId() const;
-    string getPassword() const;
+    //string getPassword() const;
     string getName() const;
     string getlastName() const;
-    string getEmail() const;
+    //string getEmail() const;
     string getPhoneNumber() const;
     string getAddress() const;
     string getRemarks() const;
@@ -52,8 +51,8 @@ public:
     bool hasOrderedCar() const;
     void setName(const string& name);
     void setlastName(const string& lastName);
-    void setEmail(const string& email);
-    void setPassword(const string& password);
+    //void setEmail(const string& email);
+    //void setPassword(const string& password);
     void setPhoneNumber(const string& phoneNumber);
     void setAddress(const string& address);
     void setRemarks(const string& remarks);

@@ -8,19 +8,26 @@ class CustomerControllerTest : public ::testing::Test {
 protected:
     CustomerRepository customerRepo;    //stocare clienti
     CustomerController controller;
+    Customer customer1;
+    Customer customer2;
+    Customer customer3;
+    Customer customer4;
 
-    Customer customer1 = Customer("1", "John", "Mike", "john.mike@example.com", "+1234567890", "Address1", "Remarks1", false, "password");
-    Customer customer2 = Customer("2", "Jane", "Smith", "jane.smith@example.com", "+0987654321", "Address2", "Remarks2", false, "password");
-    Customer customer3=Customer("1","John","Doe","john@yahoo.com","0725698653","123 Strreet","No remarks",false,"password123");
-    Customer customer4=Customer("2","Jane","SMith","jane@yahoo.com","0725569653","89 Strreet","Some remarks",false,"password456");
+    vector<Customer> customers={customer1,customer2,customer3,customer4};
 
-    CustomerControllerTest() : controller(CustomerRepository()) {}
+    CustomerControllerTest():
+    customerRepo(customers), controller(customerRepo),
+    customer1("1","John","Mike","john.mike@example.com","password","+1234567890","Address1","Remarks1",false),
+    customer2("2","Jane","Smith","jane.smith@example.com","password","+0987654321","Address2","Remarks2",false),
+    customer3("1","John","Doe","john@yahoo.com","password123","0725698653","123 Strreet","No remarks",false),
+    customer4("2","Jane","Smith","jane@yahoo.com","password456","+0725569653","89 Street","Some remarks",false){}
+
 
     void SetUp() override {
-        customerRepo.createCustomer(customer1, false);
-        customerRepo.createCustomer(customer2, false);
-        customerRepo.createCustomer(customer3,false);
-        customerRepo.createCustomer(customer4,false);
+        customerRepo.createCustomer(customer1);
+        customerRepo.createCustomer(customer2);
+        customerRepo.createCustomer(customer3);
+        customerRepo.createCustomer(customer4);
         controller = CustomerController(std::move(customerRepo));   //mutare repo in controller
     }
 };

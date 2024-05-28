@@ -4,15 +4,8 @@
 
 #include "Customer.h"
 
-Customer::Customer(string id, string name, string lastName, string email,
-                   string phoneNumber,string address,string remarks, bool gdprDeleted,string password)
-        : password_(password), id_(id), name_(name), lastName_(lastName), email_(email), phoneNumber_(phoneNumber),
-          address_(address), remarks_(remarks), gdprDeleted_(gdprDeleted) {}
 
 
-string Customer::getPassword() const {
-    return password_;
-}
 
 string Customer::getId() const {
     return id_;
@@ -26,9 +19,7 @@ string Customer::getlastName() const {
     return lastName_;
 }
 
-string Customer::getEmail() const {
-    return email_;
-}
+
 
 string Customer::getPhoneNumber() const {
     return phoneNumber_;
@@ -46,14 +37,7 @@ bool Customer::getGdprDeleted() const {
     return gdprDeleted_;
 }
 
-bool Customer::hasOrderedCar() const {
-    // aici mai trebuie completat
-    return false;
-}
 
-void Customer::setPassword(const string &password) {
-    password_ = password;
-}
 
 void Customer::setName(const string& name) {
     name_ = name;
@@ -63,9 +47,7 @@ void Customer::setlastName(const string& lastName) {
     lastName_ = lastName;
 }
 
-void Customer::setEmail(const string& email) {
-    email_ = email;
-}
+
 
 void Customer::setPhoneNumber(const string& phoneNumber) {
     phoneNumber_ = phoneNumber;
@@ -84,7 +66,7 @@ void Customer::setId(const string& id) {
     id_ = id;
 }
 
-bool Customer::setGdprDeleted(bool gdprDeleted) {
+void Customer::setGdprDeleted(bool gdprDeleted) {
     gdprDeleted_ = gdprDeleted;
 }
 
