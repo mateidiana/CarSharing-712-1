@@ -10,8 +10,8 @@ CustomerRepository::CustomerRepository() {
     startData();
 }
 
-void CustomerRepository::createCustomer(const Customer& customer, bool isEmployee) {
-    if (!isEmployee) {
+void CustomerRepository::createCustomer(const Customer& customer,Employee& employee) {
+    if (!employee.authenticate(employee.getEmail(), employee.getPassword())) {
         throw invalid_argument("Only employees are allowed to create customers.");
     }
     customers_.push_back(customer);
@@ -30,8 +30,8 @@ void CustomerRepository::modifyCustomer(const Customer& customer, Employee& empl
     throw invalid_argument("Customer not found");
 }
 
-void CustomerRepository::deleteCustomer(const Customer& customer, bool isEmployee) {
-    if (!isEmployee) {
+void CustomerRepository::deleteCustomer(const Customer& customer, Employee& employee) {
+    if (!employee.authenticate(employee.getEmail(), employee.getPassword())) {
         throw invalid_argument("Only employees are allowed to delete customers.");
     }
     for (int i = 0; i < customers_.size(); i++) {
@@ -43,8 +43,8 @@ void CustomerRepository::deleteCustomer(const Customer& customer, bool isEmploye
     throw invalid_argument("Customer not found");
 }
 
-void CustomerRepository::anonymizeCustomer(const Customer& customer, bool isEmployee) {
-    if (!isEmployee) {
+void CustomerRepository::anonymizeCustomer(const Customer& customer, Employee& employee) {
+    if (!employee.authenticate(employee.getEmail(), employee.getPassword())) {
         throw invalid_argument("Only employees are allowed to anonymize customers.");
     }
     for (int i = 0; i < customers_.size(); i++) {
@@ -62,8 +62,8 @@ void CustomerRepository::anonymizeCustomer(const Customer& customer, bool isEmpl
     throw invalid_argument("Customer not found");
 }
 
-void CustomerRepository::setOrder(const Customer &customer, const string car, Date date, bool isEmployee) {
-    if (!isEmployee) {
+void CustomerRepository::setOrder(const Customer &customer, const string car, Date date, Employee& employee) {
+    if (!employee.authenticate(employee.getEmail(), employee.getPassword())) {
         throw invalid_argument("Only employees are allowed to set orders.");
     }
     for (int i=0;i<customers_.size();i++)
