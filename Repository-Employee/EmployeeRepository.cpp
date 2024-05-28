@@ -19,7 +19,7 @@ void EmployeeRepository::addAdmin(Admin &admin) {
 
 void EmployeeRepository::removeAdmin(const string &email) {
     admins_.erase(std::remove_if(admins_.begin(), admins_.end(),
-                                    [&email](const Admin& e) { return e.getEmail() == email; }), admins_.end());
+                                 [&email](const Admin& e) { return e.getEmail() == email; }), admins_.end());
 }
 
 void EmployeeRepository::addEmployee(Employee &employee) {
@@ -28,7 +28,7 @@ void EmployeeRepository::addEmployee(Employee &employee) {
 
 void EmployeeRepository::removeEmployee(const string &email) {
     employees_.erase(std::remove_if(employees_.begin(), employees_.end(),
-                                   [&email](const Employee& e) { return e.getEmail() == email; }), employees_.end());
+                                    [&email](const Employee& e) { return e.getEmail() == email; }), employees_.end());
 }
 
 void EmployeeRepository::removeAdminRights(Admin &admin) {

@@ -44,6 +44,10 @@ public:
 
     Employee *searchEmployeeByEmail(const string &email);
 
+    bool isEmailUnique(const string &email) const;
+
+    bool isAbbreviationUnique(const string &abbreviation) const;
+
     void setupUnitTests();
 
     Employee *searchEmployeeByAbbreviation(const string &abbreviation);

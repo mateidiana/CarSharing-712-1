@@ -38,41 +38,38 @@ public:
               abbreviation_(abbreviation), phoneNumber_(phoneNumber), address_(address),
               remarks_(remarks), salary_(salary), birthDate_(birthDate){}
 
-    virtual const string &getRemarks() const;
 
+    virtual void validate() const;
+
+    virtual const string &getRemarks() const;
     virtual void setRemarks(const string &remarks);
 
     virtual const string &getAddress() const;
-
     virtual void setAddress(const string &address);
 
     virtual const string &getPhoneNumber() const;
-
     virtual void setPhoneNumber(const string &phoneNumber);
 
     virtual const string &getAbbreviation() const;
-
     virtual void setAbbreviation(const string &abbreviation);
 
     virtual const string &getPosition() const;
-
     virtual void setPosition(const string &position);
 
     virtual void setName(const string &name);
-
     virtual const string &getName() const;
 
     virtual const string &getLastName() const;
-
     virtual void setLastName(const string &lastName);
 
     virtual double getSalary() const;
-
     virtual void setSalary(double salary);
 
     virtual const string &getBirthDate() const;
-
     virtual void setBirthDate(const string &birthDate);
+
+    virtual void parseDate(const string &date, int &year, int &month, int &day) const;
+    virtual int calculateAge(const string &currentDate) const;
 
 };
 
