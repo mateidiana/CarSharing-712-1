@@ -142,3 +142,56 @@ TEST_F(CustomerControllerTest, ChangeRemarksCustomerNotFound){
     std::string newRemarks="Update remarks";
     ASSERT_THROW(controller.changeRemarks(email,newRemarks,password), std::runtime_error);
 }
+
+//Matei Diana
+TEST_F(CustomerControllerTest, AddCustomerSuccessful)
+{
+    unsigned long long size=controller.getAll().size();
+    controller.addCustomer("7","Robert","Gray","robertgray@gmail.com","rbg1456",
+                           "7854356745","ExAddress","ExRemarks",false,true);
+    ASSERT_EQ(controller.getAll().size(),size+1);
+}
+
+TEST_F(CustomerControllerTest, DeleteCustomerSuccessful)
+{
+    controller.addCustomer("7","Robert","Finch","robertfinch@gmail.com","Rbfn145677",
+                           "7854312745","ExAddress1","ExRemarks1",false,false);
+    unsigned long long size=controller.getAll().size();
+    controller.deleteCustomer("Finch",true);
+    ASSERT_EQ(controller.getAll().size(),size-1);
+}
+
+TEST_F(CustomerControllerTest,FindEmailSuccessful)
+{
+    controller.addCustomer("10","Rita","John","ritajohn@gmail.com","rtjn7788",
+                           "124567345","Adress3","RemarksEx",false,false);
+    std::string email="ritajohn@gmail.com";
+    ASSERT_EQ(controller.findByEmail(email).getName(),"Rita");
+    ASSERT_EQ(controller.findByEmail(email).getlastName(),"John");
+}
+
+TEST_F(CustomerControllerTest,FindPhoneSuccessful)
+{
+    std::string phone="0725698653";
+    ASSERT_EQ(controller.findByPhone(phone).size(),1);
+}
+
+TEST_F(CustomerControllerTest,FindNameSuccessful)
+{
+    std::string name="Jane";
+    ASSERT_EQ(controller.findByName(name).size(),2);
+    std::string lastName="Doe";
+    ASSERT_EQ(controller.findByName(lastName).size(),1);
+}
+
+TEST_F(CustomerControllerTest,AddCarOrder)
+{
+    std::string name="Julia";
+    std::string car="Fiat";
+    controller.addCustomer("15","Julia","Raine","julrn@gmail.com","jlrn77865",
+                           "445522331","Adress5","RemarksEx1",false,false);
+    controller.setCustomerOrder(name,car,{5,12,2024},true);
+    ASSERT_EQ(controller.findByOrderedCar(car).size(),1);
+
+}
+
