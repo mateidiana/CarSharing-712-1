@@ -11,12 +11,16 @@ protected:
 
     Customer customer1 = Customer("1", "John", "Mike", "john.mike@example.com", "+1234567890", "Address1", "Remarks1", false, "password");
     Customer customer2 = Customer("2", "Jane", "Smith", "jane.smith@example.com", "+0987654321", "Address2", "Remarks2", false, "password");
+    Customer customer3=Customer("1","John","Doe","john@yahoo.com","0725698653","123 Strreet","No remarks",false,"password123");
+    Customer customer4=Customer("2","Jane","SMith","jane@yahoo.com","0725569653","89 Strreet","Some remarks",false,"password456");
 
     CustomerControllerTest() : controller(CustomerRepository()) {}
 
     void SetUp() override {
         customerRepo.createCustomer(customer1, false);
         customerRepo.createCustomer(customer2, false);
+        customerRepo.createCustomer(customer3,false);
+        customerRepo.createCustomer(customer4,false);
         controller = CustomerController(std::move(customerRepo));   //mutare repo in controller
     }
 };
@@ -86,5 +90,108 @@ TEST_F(CustomerControllerTest, AddCustomerThrowsErrorWhenGdprTrueAndNameFieldsMi
                                         "", "", "Remarks3", true, false), std::runtime_error);
     ASSERT_THROW(controller.addCustomer("", "Alice", "", "", "",
                                         "", "", "Remarks3", true, false), std::runtime_error);
+}
+
+
+
+//Mane Sorina
+TEST_F(CustomerControllerTest,ChangePasswordSuccessful){
+    std::string email="john@yahoo.com";
+    std::string oldPassword="password123";
+    std::string newPassword="newpassword123";
+
+    ASSERT_NO_THROW(controller.changePassword(email,newPassword,oldPassword));
+    Customer updatedCustomer=controller.findByEmail(email);
+    ASSERT_TRUE(updatedCustomer.authenticate(email,newPassword));
+}
+
+TEST_F(CustomerControllerTest,ChangePasswordUnauthorized){
+    std::string email="john@example.com";
+    std::string oldPassword="wrongpassword";
+    std::string newPassword="newpassword123";
+
+    ASSERT_THROW(controller.changePassword(email,newPassword,oldPassword), std::runtime_error);
+}
+
+TEST_F(CustomerControllerTest,ChangePasswordCustomerNotFound){
+    std::string email="nonexistent@example.com";
+    std::string oldPassword="password123";
+    std::string newPassword="newpassword123";
+    ASSERT_THROW(controller.changePassword(email,newPassword,oldPassword), std::runtime_error);
+}
+
+TEST_F(CustomerControllerTest,ChangeRemarksSuccessful){
+    std::string email="jane@example.com";
+    std::string password="password456";
+    std::string newRemarks="Updated remarks";
+    ASSERT_NO_THROW(controller.changeRemarks(email,newRemarks,password));
+    Customer updatedCustomer=controller.findByEmail(email);
+    ASSERT_EQ(updatedCustomer.getRemarks(),newRemarks);
+}
+
+TEST_F(CustomerControllerTest, ChnageRemarksUnauthorized){
+    std::string email="jane@yahoo.com";
+    std::string password="wrongpassword";
+    std::string newRemarks="Updated remarks";
+    ASSERT_THROW(controller.changeRemarks(email,newRemarks,password),std::runtime_error);
+}
+
+TEST_F(CustomerControllerTest, ChangeRemarksCustomerNotFound){
+    std::string email="nonexistent@gmail.com";
+    std::string password="password456";
+    std::string newRemarks="Update remarks";
+    ASSERT_THROW(controller.changeRemarks(email,newRemarks,password), std::runtime_error);
+}
+
+//Matei Diana
+TEST_F(CustomerControllerTest, AddCustomerSuccessful)
+{
+    unsigned long long size=controller.getAll().size();
+    controller.addCustomer("7","Robert","Gray","robertgray@gmail.com","rbg1456",
+                           "7854356745","ExAddress","ExRemarks",false,true);
+    ASSERT_EQ(controller.getAll().size(),size+1);
+}
+
+TEST_F(CustomerControllerTest, DeleteCustomerSuccessful)
+{
+    controller.addCustomer("7","Robert","Finch","robertfinch@gmail.com","Rbfn145677",
+                           "7854312745","ExAddress1","ExRemarks1",false,false);
+    unsigned long long size=controller.getAll().size();
+    controller.deleteCustomer("Finch",true);
+    ASSERT_EQ(controller.getAll().size(),size-1);
+}
+
+TEST_F(CustomerControllerTest,FindEmailSuccessful)
+{
+    controller.addCustomer("10","Rita","John","ritajohn@gmail.com","rtjn7788",
+                           "124567345","Adress3","RemarksEx",false,false);
+    std::string email="ritajohn@gmail.com";
+    ASSERT_EQ(controller.findByEmail(email).getName(),"Rita");
+    ASSERT_EQ(controller.findByEmail(email).getlastName(),"John");
+}
+
+TEST_F(CustomerControllerTest,FindPhoneSuccessful)
+{
+    std::string phone="0725698653";
+    ASSERT_EQ(controller.findByPhone(phone).size(),1);
+}
+
+TEST_F(CustomerControllerTest,FindNameSuccessful)
+{
+    std::string name="Jane";
+    ASSERT_EQ(controller.findByName(name).size(),2);
+    std::string lastName="Doe";
+    ASSERT_EQ(controller.findByName(lastName).size(),1);
+}
+
+TEST_F(CustomerControllerTest,AddCarOrder)
+{
+    std::string name="Julia";
+    std::string car="Fiat";
+    controller.addCustomer("15","Julia","Raine","julrn@gmail.com","jlrn77865",
+                           "445522331","Adress5","RemarksEx1",false,false);
+    controller.setCustomerOrder(name,car,{5,12,2024},true);
+    ASSERT_EQ(controller.findByOrderedCar(car).size(),1);
+
 }
 
