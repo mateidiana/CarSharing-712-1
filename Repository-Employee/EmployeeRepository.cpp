@@ -62,19 +62,31 @@ void EmployeeRepository::resetPassword(Employee &employee, std::string newPasswo
 void EmployeeRepository::setupUnitTests() {}
 
 Employee* EmployeeRepository::searchEmployeeByAbbreviation(const std::string &abbreviation) {
-    auto it = std::find_if(employees_.begin(), employees_.end(),
-                           [&abbreviation](Employee& emp) {
-                               return emp.getAbbreviation() == abbreviation;
-                           });
-    return (it != employees_.end()) ? &(*it) : nullptr;
+    // definim functia lambda pentru a verifica abrevierea
+    auto isMatchingAbbreviation = [&abbreviation](const Employee& emp) {
+        return emp.getAbbreviation() == abbreviation;
+    };
+    // iteram prin vectorul de angajati si folosim lambda pentru a verifica fiecare angajat
+    for (auto& employee : employees_) {
+        if (isMatchingAbbreviation(employee)) {
+            return &employee;
+        }
+    }
+    return nullptr;
 }
 
 Employee* EmployeeRepository::searchEmployeeByEmail(const std::string &email) {
-    auto it = std::find_if(employees_.begin(), employees_.end(),
-                           [&email](Employee& emp) {
-                               return emp.getEmail() == email;
-                           });
-    return (it != employees_.end()) ? &(*it) : nullptr;
+    // definim functia lambda pt a verifica mail-ul
+    auto isMatchingEmail = [&email](const Employee& emp) {
+        return emp.getEmail() == email;
+    };
+    // iteram prin vectorul de angajati si folosim lambda pentru a verifica fiecare angajat
+    for (auto& employee : employees_) {
+        if (isMatchingEmail(employee)) {
+            return &employee;
+        }
+    }
+    return nullptr;
 }
 
 void EmployeeRepository::startData() {
