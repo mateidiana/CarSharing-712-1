@@ -16,7 +16,8 @@ public:
     void showMenu();
     void login();
     void addCustomer();
-
+    void addToFavourites();
+    void seeFavouriteList();
 
 
 };

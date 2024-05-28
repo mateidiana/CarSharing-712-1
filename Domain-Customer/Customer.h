@@ -8,7 +8,8 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
-#include "../Domain-User/User.h"
+#include <vector>
+#include "..\Domain-Car\Car.h"
 
 using namespace std;
 
@@ -16,26 +17,31 @@ struct Date {
     int day, month, year;
 };
 
-class Customer:public User {
+class Customer {
 private:
     string id_;
     string name_;
     string lastName_;
+    string email_;
     string phoneNumber_;
     string address_;
     string remarks_;
+    string password_;
     bool gdprDeleted_;
 
     string orderedCar_;
     Date orderedDate_;
     bool hasOrderedCar_= false;
 
-public:
-    Customer(string id, string name, string lastName, string email,
-             string phoneNumber, string address, string remarks, bool gdprDeleted,string password);
+    vector<Car> favourites_;
+    bool loggedin_;
 
-    string getPassword() const;
+public:
+    Customer(string id, string name, string lastName, string email, string password,
+             string phoneNumber, string address, string remarks, bool gdprDeleted);
+
     string getId() const;
+    string getPassword() const;
     string getName() const;
     string getlastName() const;
     string getEmail() const;
@@ -44,14 +50,15 @@ public:
     string getRemarks() const;
     bool getGdprDeleted() const;
     bool hasOrderedCar() const;
-    void setPassword(const string& password);
     void setName(const string& name);
     void setlastName(const string& lastName);
     void setEmail(const string& email);
+    void setPassword(const string& password);
     void setPhoneNumber(const string& phoneNumber);
     void setAddress(const string& address);
     void setRemarks(const string& remarks);
-    bool setGdprDeleted(bool gdprDeleted);
+    void setGdprDeleted(bool gdprDeleted);
+
 
     string getOrderedCar() const;
     Date getOrderDate() const;
@@ -60,8 +67,13 @@ public:
     void setOrderedDate(Date date);
     void setHasOrderedCar(bool hasOrderedCar);
 
+    void setLoginStatus(const bool &loggedin);
+    bool getLoginStatus() const;
+    void addToFavourites(const Car car);
+    vector <Car> seeFavourites() const;
 private:
     void setId(const string& id);
+
 };
 
 
