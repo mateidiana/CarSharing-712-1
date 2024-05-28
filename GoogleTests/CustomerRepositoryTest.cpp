@@ -2,16 +2,16 @@
 #include "../Domain-Employee/Employee.h"
 #include "gtest/gtest.h"
 
-
 class CustomerRepositoryTest : public ::testing::Test {
 protected:
     CustomerRepository repository;
     Customer customer1;
     Employee employee;
 
-    void SetUp() override {
-        customer1 = Customer("1", "John", "Doe", "john.doe@example.com", "1234567890", "Address", "Remarks", false, "byhdusi3");
-        employee = Employee("emp@example.com", "password", "name", "lastName", "position", "abbreviation", "1234567890", "Address", "remarks", 150000);
+    CustomerRepositoryTest()
+            : customer1("1", "John", "Doe", "john.doe@example.com", "1234567890", "Address", "Remarks", false, "byhdusi3"),
+              employee("emp@example.com", "password", "name", "lastName", "position", "abbreviation", "1234567890", "Address", "remarks", 150000, "01.01.1980")
+    {
     }
 };
 
@@ -42,7 +42,7 @@ TEST_F(CustomerRepositoryTest, ModifyCustomer_Success) {
 TEST_F(CustomerRepositoryTest, ModifyCustomer_NotEmployee) {
     Customer modifiedCustomer("1", "John", "Doe", "john.new@example.com", "9876543210", "New Address", "New Remarks", false, "byhdusi3");
 
-    Employee wrongEmployee("wrong@example.com", "wrongpassword", "wrongname", "wronglastName", "wrongposition", "wrongabbreviation", "0987654321", "Wrong Address", "wrongremarks", 100000);
+    Employee wrongEmployee("wrong@example.com", "wrongpassword", "wrongname", "wronglastName", "wrongposition", "wrongabbreviation", "0987654321", "Wrong Address", "wrongremarks", 100000, "02.02.1985");
 
     ASSERT_THROW(repository.modifyCustomer(modifiedCustomer, wrongEmployee), std::invalid_argument);
     auto customers = repository.getAll();
@@ -58,7 +58,6 @@ TEST_F(CustomerRepositoryTest, DeleteCustomer_NotEmployee) {
     ASSERT_THROW(repository.deleteCustomer(customer1, false), std::invalid_argument);
     ASSERT_EQ(repository.getAll().size(), 1);
 }
-
 
 TEST_F(CustomerRepositoryTest, AnonymizeCustomer_NotEmployee) {
     ASSERT_THROW(repository.anonymizeCustomer(customer1, false), std::invalid_argument);
