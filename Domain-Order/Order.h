@@ -79,7 +79,7 @@ public:
 
     void printDetails() const;
 
-    // Methods to delete reservations
+    // Methods to delete reservations!
     bool canDeleteReservation(const Customer& customer) const;
     bool canDeleteReservation(const Employee& employee) const;
     void deleteReservation();

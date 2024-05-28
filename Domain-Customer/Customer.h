@@ -61,7 +61,7 @@ public:
     void setOrderedDate(Date date);
     void setHasOrderedCar(bool hasOrderedCar);
 
-    // Delete a reservation
+    // Delete a reservation!
     void deleteReservation(Order& order);
 
 private:

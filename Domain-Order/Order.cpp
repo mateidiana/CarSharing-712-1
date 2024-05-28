@@ -92,6 +92,7 @@ bool Order::canDeleteReservation(const Employee& employee) const {
     return (status == Status::Reservation);
 }
 
+//delete reservations
 void Order::deleteReservation() {
     if (status == Status::Reservation) {
         status = Status::Completed; // Assuming that 'Completed' status indicates a deleted reservation

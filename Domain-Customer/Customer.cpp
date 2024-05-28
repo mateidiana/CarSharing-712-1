@@ -112,6 +112,7 @@ void Customer::setHasOrderedCar(bool hasOrderedCar) {
     hasOrderedCar_=hasOrderedCar;
 }
 
+//delete reservations
 void Customer::deleteReservation(Order& order) {
     if (order.canDeleteReservation(*this)) {
         order.deleteReservation();
