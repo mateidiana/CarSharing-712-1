@@ -5,6 +5,7 @@ include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 add_executable(Google_tests_run CarRepositoryTest.cpp
         CustomerControllerTest.cpp
         CustomerRepositoryTest.cpp
+        EmployeeTestM6.cpp
 )
 
 target_link_libraries(Google_tests_run CarRepositoryLib)
