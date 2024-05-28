@@ -10,10 +10,24 @@ using namespace std;
 CustomerUI::CustomerUI(CustomerController &controller):controller(controller) {};
 
 void CustomerUI::showMenu() {
+    int choice;
+    do{
     cout << "1. Login";
     cout <<"2.Add Customer";
     cout << "Choose option";
+    cin>>choice;
+    switch(choice){
+        case 1:
+            login();
+            break;
+        case 2:
+            addCustomer();
+            break;
+        default:
+            cout<<"Invalid option please try again!"<<endl;
 
+        }
+    }while(choice!=1 && choice !=2);
 
 }
 
