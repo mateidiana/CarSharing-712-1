@@ -34,7 +34,8 @@ add_executable(CarSharing_712_1 main.cpp
         ../UI-Customer/CustomerUI.cpp
         UI-Customer/CustomerUI.h
         UI-Customer/CustomerUI.h
-        UI-Customer/CustomerUI.cpp)
+        UI-Customer/CustomerUI.cpp
+        Domain-Order/Order.h)
 
 
 target_link_libraries(CarSharing_712_1 CarRepositoryLib CarLib)

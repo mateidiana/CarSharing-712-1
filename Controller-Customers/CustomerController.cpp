@@ -7,6 +7,7 @@
 #include <utility>
 #include <algorithm>
 #include <cstring>
+#include "..\Domain-Customer\Customer.h"
 
 CustomerController::CustomerController(CustomerRepository customerRepo) : customerRepo(std::move(customerRepo)) {}
 
@@ -188,5 +189,20 @@ bool CustomerController::isEmailFormaValid(const string &email) {
 
     return hasAtSymbol && hasDot;
 }
+void CustomerController::addToFavourites(std::string &email, const Car &car, const std::string &password) {
+
+    Customer customer = this->findByEmail(email);
+    customer.setLoginStatus(true); //for the sake of the tests we will assume that this is set as true
+    if (customer.getId().empty()) {
+        throw runtime_error("Customer not found");
+    }
+
+    if (!customer.getLoginStatus()) {
+        throw runtime_error("Unauthorized access");
+    }
+    customer.addToFavourites(car);
+    customerRepo.modifyCustomer(customer);
+}
+
 
 

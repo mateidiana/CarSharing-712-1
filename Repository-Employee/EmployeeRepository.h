@@ -33,7 +33,7 @@ public:
     std::vector<Employee> searchEmployeesByBirthDateRange(const std::string &startDate, const std::string &endDate) const;
     std::vector<Employee> searchEmployeesByNameAndLastName(const std::string &name, const std::string &lastName) const;
     std::vector<Employee> getAllEmployees() const;
-    vector<Employee> searchEmployeesByNameAndLastName(const string &name, const string &lastName) const;
+    //vector<Employee> searchEmployeesByNameAndLastName(const string &name, const string &lastName) const;
 
     vector<Employee> getAllEmployees() const;
 
