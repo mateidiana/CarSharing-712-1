@@ -11,7 +11,7 @@ Customer::Customer(string id, string name, string lastName, string email,
 
 
 string Customer::getPassword() const {
-    return id_;
+    return password_;
 }
 
 string Customer::getId() const {
@@ -111,3 +111,16 @@ void Customer::setOrderedDate(Date date) {
 void Customer::setHasOrderedCar(bool hasOrderedCar) {
     hasOrderedCar_=hasOrderedCar;
 }
+
+void Customer::setLoginStatus(const bool &loggedin) {
+    loggedin_=loggedin;
+}
+bool Customer::getLoginStatus() const{
+    return loggedin_;
+}
+void Customer::addToFavourites(const Car car) {
+    favourites_.push_back(car);
+}
+vector<Car> Customer::seeFavourites() const{
+    return favourites_;
+};

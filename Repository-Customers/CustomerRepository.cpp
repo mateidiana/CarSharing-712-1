@@ -3,6 +3,8 @@
 //
 
 #include "CustomerRepository.h"
+#include "../Controller-Customers/CustomerController.h"
+#include "../Domain-Customer/Customer.h"
 
 CustomerRepository::CustomerRepository() {
     startData();
