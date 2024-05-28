@@ -1,9 +1,9 @@
 //
 // Created by zaxx4 on 27.05.2024.
 //
-#include "EmployeeRepository.h"
-#include "Employee.h"
-#include "Admin.h"
+#include "../Repository-Employee/EmployeeRepository.h"
+#include "../Domain-Employee/Employee.h"
+#include "../Domain-Admin/Admin.h"
 #include "gtest/gtest.h"
 
 class EmployeeRepositoryTest : public ::testing::Test {
