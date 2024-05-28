@@ -43,7 +43,6 @@ public:
     string getAddress() const;
     string getRemarks() const;
     bool getGdprDeleted() const;
-    bool hasOrderedCar() const;
     void setPassword(const string& password);
     void setName(const string& name);
     void setlastName(const string& lastName);
