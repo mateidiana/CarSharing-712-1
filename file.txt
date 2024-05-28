@@ -1,11 +1,11 @@
 10
-Ion Popescu 1@gmail.com Vanzator Dacia 1300
-Bodgan Carturescu 2@gmail.com Electrician Mercedes Benz
-Felicia Ivancea 3@gmail.com Informatician BMW I4
-Dan Cotorobai 4@gmail.com Translator Peugeout 230
-Mirel Miron 5@gmail.com Preot Hyundai 2000
-Ianis Robert 6@gmail.com Primar Chevrolet MK
-Daniela Vischel 7@gmail.com Olar Oppel 3
-Vasile Lujerdean 8@gmail.com Fermier Woltswagen Golf
-Ana Gauzean 9@gmail.com Apicultor SsangYong Tivoli
-Matei Dragos 10@gmail.com Antrepenor MK ASeries
+Ion Popescu 1 a 111 1@gmail.com A 1300 2003
+Bodgan Carturescu 2 b 222 2@gmail.com B 2600 2004
+Felicia Ivancea 3 c 333 3@gmail.com C 2200 2005
+Dan Cotorobai 4 d 444 4@gmail.com D 1400 2006
+Mirel Miron 5 e 555 5@gmail.com E 1200 2007
+Ianis Robert 6 f 666 6@gmail.com F 1000 2008
+Daniela Vischel 7 g 777 7@gmail.com G 500 2009
+Vasile Lujerdean 8 h 888 8@gmail.com H 100 2010
+Ana Gauzean 9 i 999 9@gmail.com I 50 2011
+Matei Dragos 10 j 1000 10@gmail.com J 10 2012
