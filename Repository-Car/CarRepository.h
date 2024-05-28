@@ -16,6 +16,7 @@ public:
     void removeCar(const string& licensePlate);
     void deactivateCar(const string& licensePlate);
     vector<Car> returnList();
+    vector<Car> startData();
 };
 
 #endif //CARSHARING_712_1_CARREPOSITORY_H
