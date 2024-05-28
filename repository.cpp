@@ -25,7 +25,7 @@ public:
         controller.sortByLastName();
     }
 
-    std::vector<Employee> get_employees() const {
-        return controller.get_employees();
+    std::vector<Employee> getAll() const {
+        return controller.getAll();
     }
 };
