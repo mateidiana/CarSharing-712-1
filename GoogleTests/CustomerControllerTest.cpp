@@ -3,7 +3,7 @@
 #include "../Controller-Customers/CustomerController.h"
 #include "gtest/gtest.h"
 
-
+//GEORGIANA MAIER
 class CustomerControllerTest : public ::testing::Test {
 protected:
     CustomerRepository customerRepo;    //stocare clienti
@@ -12,7 +12,7 @@ protected:
     Customer customer1 = Customer("1", "John", "Mike", "john.mike@example.com", "+1234567890", "Address1", "Remarks1", false, "password");
     Customer customer2 = Customer("2", "Jane", "Smith", "jane.smith@example.com", "+0987654321", "Address2", "Remarks2", false, "password");
     Customer customer3=Customer("1","John","Doe","john@yahoo.com","0725698653","123 Strreet","No remarks",false,"password123");
-    Customer customer4=Customer("2","Jane","SMith","jane@yahoo.com","0725569653","89 Strreet","Some remarks",false,"password456");
+    Customer customer4=Customer("2","Jane","Smith","jane@yahoo.com","0725569653","89 Strreet","Some remarks",false,"password456");
 
     CustomerControllerTest() : controller(CustomerRepository()) {}
 
@@ -59,37 +59,37 @@ TEST_F(CustomerControllerTest, IsEmailFormaValidReturnsTrueForValidEmail) { //va
 //gdprDeleted = false, toate campurile completate
 TEST_F(CustomerControllerTest, AddCustomerThrowsNoErrorWhenGdprFalseAndAllFieldsFilled) {
     ASSERT_NO_THROW(controller.addCustomer("3", "Alice", "Wonder", "alice.wonder@example.com", "password",
-                                           "+1122334455", "Address3", "Remarks3", false, false));
+                                           "+1122334455", "Address3", "Remarks3", false));
 }
 
 //gdprDeleted = false, campuri obligatorii necompletate
 TEST_F(CustomerControllerTest, AddCustomerThrowsErrorWhenGdprFalseAndFieldsMissing) {
     ASSERT_THROW(controller.addCustomer("", "Alice", "Wonder", "alice.wonder@example.com", "password",
-                                        "+1122334455", "Address3", "Remarks3", false, false), std::runtime_error);
+                                        "+1122334455", "Address3", "Remarks3", false), std::runtime_error);
     ASSERT_THROW(controller.addCustomer("3", "", "Wonder", "alice.wonder@example.com", "password",
-                                        "+1122334455", "Address3", "Remarks3", false, false), std::runtime_error);
+                                        "+1122334455", "Address3", "Remarks3", false), std::runtime_error);
     ASSERT_THROW(controller.addCustomer("3", "Alice", "", "alice.wonder@example.com", "password",
-                                        "+1122334455", "Address3", "Remarks3", false, false), std::runtime_error);
+                                        "+1122334455", "Address3", "Remarks3", false), std::runtime_error);
     ASSERT_THROW(controller.addCustomer("3", "Alice", "Wonder", "", "password",
-                                        "+1122334455", "Address3", "Remarks3", false, false), std::runtime_error);
+                                        "+1122334455", "Address3", "Remarks3", false), std::runtime_error);
     ASSERT_THROW(controller.addCustomer("3", "Alice", "Wonder", "alice.wonder@example.com", "",
-                                        "+1122334455", "Address3", "Remarks3", false, false), std::runtime_error);
+                                        "+1122334455", "Address3", "Remarks3", false), std::runtime_error);
     ASSERT_THROW(controller.addCustomer("3", "Alice", "Wonder", "alice.wonder@example.com", "password",
-                                        "", "Address3", "Remarks3", false, false), std::runtime_error);
+                                        "", "Address3", "Remarks3", false), std::runtime_error);
 }
 
 //gdprDeleted = true, name + lastName completate
 TEST_F(CustomerControllerTest, AddCustomerThrowsNoErrorWhenGdprTrueAndNameFieldsFilled) {
     ASSERT_NO_THROW(controller.addCustomer("", "Alice", "Wonder", "", "",
-                                           "", "", "Remarks3", true, false));
+                                           "", "", "Remarks3", true));
 }
 
 //gdprDeleted = true, name + lastName necompletate
 TEST_F(CustomerControllerTest, AddCustomerThrowsErrorWhenGdprTrueAndNameFieldsMissing) {
     ASSERT_THROW(controller.addCustomer("", "", "Wonder", "", "",
-                                        "", "", "Remarks3", true, false), std::runtime_error);
+                                        "", "", "Remarks3", true), std::runtime_error);
     ASSERT_THROW(controller.addCustomer("", "Alice", "", "", "",
-                                        "", "", "Remarks3", true, false), std::runtime_error);
+                                        "", "", "Remarks3", true), std::runtime_error);
 }
 
 
