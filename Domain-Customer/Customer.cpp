@@ -6,8 +6,8 @@
 
 Customer::Customer(string id, string name, string lastName, string email,
                    string phoneNumber,string address,string remarks, bool gdprDeleted,string password)
-        : password_(password), id_(id), name_(name), lastName_(lastName), email_(email), phoneNumber_(phoneNumber),
-          address_(address), remarks_(remarks), gdprDeleted_(gdprDeleted) {}
+        :  id_(id), name_(name), lastName_(lastName), email_(email), phoneNumber_(phoneNumber),
+          address_(address), remarks_(remarks), gdprDeleted_(gdprDeleted),password_(password){}
 
 
 string Customer::getPassword() const {
@@ -44,11 +44,6 @@ string Customer::getRemarks() const {
 
 bool Customer::getGdprDeleted() const {
     return gdprDeleted_;
-}
-
-bool Customer::hasOrderedCar() const {
-    // aici mai trebuie completat
-    return false;
 }
 
 void Customer::setPassword(const string &password) {
