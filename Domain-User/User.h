@@ -10,21 +10,21 @@ using namespace std;
 class User{
 
 protected:
-    string email_;
     string password_;
-
+    string email_;
+    
 public:
-    explicit User(const string &email, const string &password);
+    explicit User(const std::string &email, const std::string &password);
 
-    const string &getEmail() const;
+    virtual const std::string &getEmail() const;
 
-    void setEmail(const string &email);
+    virtual void setEmail(const std::string &email);
 
-    const string &getPassword() const;
+    virtual const std::string &getPassword() const;
 
-    void setPassword(const string &password);
+    virtual void setPassword(const std::string &password);
 
-    bool authenticate(const string &email, const string &password);
+    virtual bool authenticate(const std::string &email, const std::string &password);
 
 };
 #endif //CARSHARING_USER_H

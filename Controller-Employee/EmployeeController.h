@@ -53,18 +53,22 @@ public:
         repository_.resetPassword(employee, newPassword);
     }
 
+    // Matei Dana-Maria
     Employee* searchEmployeeByAbbreviation(const std::string &abbreviation) {
         return repository_.searchEmployeeByAbbreviation(abbreviation);
     }
 
+    // Matei Dana-Maria
     Employee* searchEmployeeByEmail(const std::string &email) {
         return repository_.searchEmployeeByEmail(email);
     }
 
+    // Matei Dana-Maria
     void startData() {
         repository_.startData();
     }
 
+    // Matei Dana-Maria
     void setupUnitTests() {
         repository_.setupUnitTests();
     }

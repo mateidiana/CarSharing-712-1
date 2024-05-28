@@ -57,3 +57,55 @@ TEST_F(CarRepositoryTest, DeactivateCarChangesCarStatus) {
 TEST_F(CarRepositoryTest, DeactivateCarThrowsExceptionWhenCarNotFound) {
     ASSERT_THROW(repository.deactivateCar("nonexistent_plate"), std::runtime_error);
 }
+
+//// Matei Dana-Maria
+//#include <gtest/gtest.h>
+//#include "../Domain-Employee/Employee.h"
+//#include "../Repository-Employee/EmployeeRepository.h"
+//
+//TEST(EmployeeTest, CreateEmployee) {
+//    // testul verifica daca  un obiect 'employee' este creeat corect cu atributele corespunzatoare
+//    Employee employee("john.doe@example.com", "password123", "John", "Doe", "Manager", "JD", "077125639", "123 Main St", "No remarks", 50000);
+//    // verificam daca valoarea asteptata (primul argument) este aceeasi cu valoarea obtinuta (al doilea argument)
+//    ASSERT_EQ(employee.getEmail(), "john.doe@example.com");
+//    ASSERT_EQ(employee.getPassword(), "password123");
+//    ASSERT_EQ(employee.getName(), "John");
+//    ASSERT_EQ(employee.getLastName(), "Doe");
+//    ASSERT_EQ(employee.getPosition(), "Manager");
+//    ASSERT_EQ(employee.getAbbreviation(), "JD");
+//    ASSERT_EQ(employee.getPhoneNumber(), "555-0101");
+//    ASSERT_EQ(employee.getAddress(), "123 Main St");
+//    ASSERT_EQ(employee.getRemarks(), "No remarks");
+//    ASSERT_EQ(employee.getSalary(), 50000);
+//}
+//
+//TEST(EmployeeRepositoryTest, AddAndSearchEmployee) {
+//    // testul verifica adaugarea unui angajat in repository si cautarea lui dupa email si abreviere
+//    EmployeeRepository repo;
+//    Employee employee("john.doe@example.com", "password123", "John", "Doe", "Manager", "JD", "555-0101", "123 Main St", "No remarks", 50000);
+//    // adaugam angajatul in repository
+//    repo.addEmployee(employee);
+//    // cautam angajatul dupa email
+//    Employee* foundEmployee = repo.searchEmployeeByEmail("john.doe@example.com");
+//    // verific daca anjajatul a fost gasit (pointerul nu este null)
+//    ASSERT_NE(foundEmployee, nullptr);
+//    // verific daca numele angajatului gasit este John
+//    EXPECT_EQ(foundEmployee->getName(), "John");
+//    // caut angajatul dupa abreviere
+//    foundEmployee = repo.searchEmployeeByAbbreviation("JD");
+//    // verific daca anjajatul a fost gasit (pointerul nu este null)
+//    ASSERT_NE(foundEmployee, nullptr);
+//    // verific daca mail-ul angajatului gasit este ...
+//    EXPECT_EQ(foundEmployee->getEmail(), "john.doe@example.com");
+//}
+//
+//TEST(EmployeeRepositoryTest, RemoveEmployee) {
+//    // testul verifica eliminarea unui angajat din repository si confirma ca angajatul nu mai poate fi gasit dupa eliminare
+//    EmployeeRepository repo;
+//    Employee employee("john.doe@example.com", "password123", "John", "Doe", "Manager", "JD", "555-0101", "123 Main St", "No remarks", 50000);
+//    repo.addEmployee(employee);
+//    repo.removeEmployee("john.doe@example.com");
+//
+//    Employee* foundEmployee = repo.searchEmployeeByEmail("john.doe@example.com");
+//    ASSERT_EQ(foundEmployee, nullptr); // varificam ca angajatul nu mai est egasit
+//}

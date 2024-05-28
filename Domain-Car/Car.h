@@ -22,7 +22,7 @@ private:
     string color;
     string remark;
     bool ordered; 
-    bool active;  
+    bool active;
 
 public:
     Car(string licensePlate, string model, string brand, int firstRegistrationYear, int mileage, double dailyPrice, string fuelType, string transmission, string color, string remark);

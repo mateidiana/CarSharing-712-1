@@ -3,14 +3,15 @@
 //
 
 #include "CustomerRepository.h"
-
+#include "../Controller-Customers/CustomerController.h"
+#include "../Domain-Customer/Customer.h"
 
 CustomerRepository::CustomerRepository() {
     startData();
 }
 
-void CustomerRepository::createCustomer(const Customer& customer, const ) {
-    if (!isEmployee) {
+void CustomerRepository::createCustomer(const Customer& customer,Employee& employee) {
+    if (!employee.authenticate(employee.getEmail(), employee.getPassword())) {
         throw invalid_argument("Only employees are allowed to create customers.");
     }
     customers_.push_back(customer);
@@ -29,8 +30,8 @@ void CustomerRepository::modifyCustomer(const Customer& customer, Employee& empl
     throw invalid_argument("Customer not found");
 }
 
-void CustomerRepository::deleteCustomer(const Customer& customer, bool isEmployee) {
-    if (!isEmployee) {
+void CustomerRepository::deleteCustomer(const Customer& customer, Employee& employee) {
+    if (!employee.authenticate(employee.getEmail(), employee.getPassword())) {
         throw invalid_argument("Only employees are allowed to delete customers.");
     }
     for (int i = 0; i < customers_.size(); i++) {
@@ -42,8 +43,8 @@ void CustomerRepository::deleteCustomer(const Customer& customer, bool isEmploye
     throw invalid_argument("Customer not found");
 }
 
-void CustomerRepository::anonymizeCustomer(const Customer& customer, bool isEmployee) {
-    if (!isEmployee) {
+void CustomerRepository::anonymizeCustomer(const Customer& customer, Employee& employee) {
+    if (!employee.authenticate(employee.getEmail(), employee.getPassword())) {
         throw invalid_argument("Only employees are allowed to anonymize customers.");
     }
     for (int i = 0; i < customers_.size(); i++) {
@@ -61,8 +62,8 @@ void CustomerRepository::anonymizeCustomer(const Customer& customer, bool isEmpl
     throw invalid_argument("Customer not found");
 }
 
-void CustomerRepository::setOrder(const Customer &customer, const string car, Date date, bool isEmployee) {
-    if (!isEmployee) {
+void CustomerRepository::setOrder(const Customer &customer, const string car, Date date, Employee& employee) {
+    if (!employee.authenticate(employee.getEmail(), employee.getPassword())) {
         throw invalid_argument("Only employees are allowed to set orders.");
     }
     for (int i=0;i<customers_.size();i++)
@@ -82,14 +83,14 @@ vector<Customer> CustomerRepository::getAll() {
 }
 
 void CustomerRepository::startData() {
-    customers_.push_back(Customer("1","Bob","Popescu","bob1@yahoo.com","1234","1234567892","Plopilor 1","", false));
-    customers_.push_back(Customer("2","Zob","Georgescu","zob@yahoo.com","abcd","2341567345","Moldoveanu 15","", false));
-    customers_.push_back(Customer("3","Dob","Florescu","dob25@yahoo.com","qwert","5678345123","Ariesului 112","", false));
-    customers_.push_back(Customer("4","Cob","Grigorescu","ciob15@yahoo.com","asdf","4567123234","Bucium 20","", false));
-    customers_.push_back(Customer("5","Ana","Vladescu","anavld@yahoo.com","tyuio","2345123897","Cisnadiei 2","", false));
-    customers_.push_back(Customer("6","Maria","Andrei","andreimaria5@yahoo.com","qawsed","5678456098","Baciului 4","", false));
-    customers_.push_back(Customer("7","Mihai","George","mihaig@yahoo.com","12345","4567345234","Negoi 12","", false));
-    customers_.push_back(Customer("8","Laura","Mihaelescu","lauram@yahoo.com","1a2s3d","5678456345","Florilor 15","", false));
-    customers_.push_back(Customer("9","Andreea","Neamtu","neamtuandreea@yahoo.com","4f5g6h","4567234123","Farului 1","", false));
-    customers_.push_back(Customer("10","Bianca","Fader","biancafad@yahoo.com","r4t5y6","6789467125","Gradinii 45","", false));
+    customers_.push_back(Customer("1","Bob","Popescu","bob1@yahoo.com","1234567892","Plopilor 1","", false,"hdeuy7e"));
+    customers_.push_back(Customer("2","Zob","Georgescu","zob@yahoo.com","2341567345","Moldoveanu 15","", false,"jdus8duc"));
+    customers_.push_back(Customer("3","Dob","Florescu","dob25@yahoo.com","5678345123","Ariesului 112","", false,"nduhdu8hcn"));
+    customers_.push_back(Customer("4","Cob","Grigorescu","ciob15@yahoo.com","4567123234","Bucium 20","", false,"jcidjc9djc"));
+    customers_.push_back(Customer("5","Ana","Vladescu","anavld@yahoo.com","2345123897","Cisnadiei 2","", false,"kidj8jdicj"));
+    customers_.push_back(Customer("6","Maria","Andrei","andreimaria5@yahoo.com","5678456098","Baciului 4","", false,"dciudhcdn"));
+    customers_.push_back(Customer("7","Mihai","George","mihaig@yahoo.com","4567345234","Negoi 12","", false,"diucnudh"));
+    customers_.push_back(Customer("8","Laura","Mihaelescu","lauram@yahoo.com","5678456345","Florilor 15","", false,"dncudh8"));
+    customers_.push_back(Customer("9","Andreea","Neamtu","neamtuandreea@yahoo.com","4567234123","Farului 1","", false,"nhr894"));
+    customers_.push_back(Customer("10","Bianca","Fader","biancafad@yahoo.com","6789467125","Gradinii 45","", false,"mjdifj8"));
 }
