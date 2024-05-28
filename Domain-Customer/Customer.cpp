@@ -111,3 +111,11 @@ void Customer::setOrderedDate(Date date) {
 void Customer::setHasOrderedCar(bool hasOrderedCar) {
     hasOrderedCar_=hasOrderedCar;
 }
+
+void Customer::deleteReservation(Order& order) {
+    if (order.canDeleteReservation(*this)) {
+        order.deleteReservation();
+    } else {
+        cout << "Error: You can only delete your own reservations." << endl;
+    }
+}

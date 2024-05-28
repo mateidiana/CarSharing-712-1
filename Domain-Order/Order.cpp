@@ -59,6 +59,18 @@ string Order::statusToString(Status stat) {
     }
 }
 
+void Order::placeOrder(const Employee& employee) {
+    // Check if the employee is valid (i.e., has a valid email)
+    if (!employee.getEmail().empty()) { // Assuming getEmail() returns the employee's email
+        // Logic to place an order, only accessible to employees
+        status = Status::Order; // Update the status to indicate that the order has been placed
+        cout << "Order placed successfully by employee: " << employee.getName() << endl;
+    } else {
+        // If employee is not valid, do not proceed with placing the order
+        cout << "Error: Only employees with a valid email can place orders." << endl;
+    }
+}
+
 void Order::printDetails() const {
     cout << "Number of the order: " << orderNumber << endl;
     cout << "Date of the order: " << orderDate.day << "." << orderDate.month << "." << orderDate.year << endl;
@@ -70,4 +82,21 @@ void Order::printDetails() const {
     cout << "Employee: " << employee.getName() << endl;
     cout << "Total Cost: " << totalSum << endl;
     cout << "Remarks: " << remarks << endl;
+}
+
+bool Order::canDeleteReservation(const Customer& customer) const {
+    return (status == Status::Reservation) && (customer.getEmail() == this->customer.getEmail());
+}
+
+bool Order::canDeleteReservation(const Employee& employee) const {
+    return (status == Status::Reservation);
+}
+
+void Order::deleteReservation() {
+    if (status == Status::Reservation) {
+        status = Status::Completed; // Assuming that 'Completed' status indicates a deleted reservation
+        cout << "Reservation deleted successfully." << endl;
+    } else {
+        cout << "Error: Only reservations can be deleted." << endl;
+    }
 }

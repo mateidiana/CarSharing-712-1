@@ -9,6 +9,7 @@
 #include <string>
 #include <stdexcept>
 #include "../Domain-User/User.h"
+#include "../Domain-Order/Order.h"
 
 using namespace std;
 
@@ -59,6 +60,9 @@ public:
     void setOrderedCar(const string &orderedCar);
     void setOrderedDate(Date date);
     void setHasOrderedCar(bool hasOrderedCar);
+
+    // Delete a reservation
+    void deleteReservation(Order& order);
 
 private:
     void setId(const string& id);

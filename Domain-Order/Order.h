@@ -75,7 +75,14 @@ public:
 
     static string statusToString(Status stat);
 
+    void placeOrder(const Employee& employee);
+
     void printDetails() const;
+
+    // Methods to delete reservations
+    bool canDeleteReservation(const Customer& customer) const;
+    bool canDeleteReservation(const Employee& employee) const;
+    void deleteReservation();
 };
 
 #endif //CARSHARING_712_1_ORDER_H

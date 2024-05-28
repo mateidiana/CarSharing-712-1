@@ -111,3 +111,16 @@ int Employee::calculateAge(const string &currentDate) const {
     }
     return age;
 }
+
+void Employee::placeOrder(Order& order) {
+    // Logic for placing an order
+    order.placeOrder(*this); // Pass the current employee to placeOrder method of the order
+}
+
+void Employee::deleteReservation(Order& order) {
+    if (order.canDeleteReservation(*this)) {
+        order.deleteReservation();
+    } else {
+        cout << "Error: Only reservations can be deleted." << endl;
+    }
+}

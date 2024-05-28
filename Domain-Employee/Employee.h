@@ -8,6 +8,7 @@
 #include <string>
 #include <stdexcept>
 #include "../Domain-User/User.h"
+#include "../Domain-Order/Order.h"
 class User;
 
 using namespace std;
@@ -71,6 +72,10 @@ public:
     virtual void parseDate(const string &date, int &year, int &month, int &day) const;
     virtual int calculateAge(const string &currentDate) const;
 
+    // Place an order
+    virtual void placeOrder(Order& order);
+
+    virtual void deleteReservation(Order& order);
 };
 
 #endif //CARSHARING_712_1_EMPLOYEE_H
