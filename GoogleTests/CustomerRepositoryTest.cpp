@@ -18,14 +18,14 @@ protected:
 TEST_F(CustomerRepositoryTest, CreateCustomer_Success) {
     Customer newCustomer("11", "Jane", "Smith", "jane.smith@example.com", "0987654321", "Another Address", "More Remarks", false, "newid");
 
-    ASSERT_NO_THROW(repository.createCustomer(newCustomer, true));
+    ASSERT_NO_THROW(repository.createCustomer(newCustomer, employee));
     ASSERT_EQ(repository.getAll().size(), 2);
 }
 
 TEST_F(CustomerRepositoryTest, CreateCustomer_NotEmployee) {
     Customer newCustomer("11", "Jane", "Smith", "jane.smith@example.com", "0987654321", "Another Address", "More Remarks", false, "newid");
 
-    ASSERT_THROW(repository.createCustomer(newCustomer, false), std::invalid_argument);
+    ASSERT_THROW(repository.createCustomer(newCustomer, employee), std::invalid_argument);
     ASSERT_EQ(repository.getAll().size(), 1);
 }
 
@@ -50,23 +50,23 @@ TEST_F(CustomerRepositoryTest, ModifyCustomer_NotEmployee) {
 }
 
 TEST_F(CustomerRepositoryTest, DeleteCustomer_Success) {
-    ASSERT_NO_THROW(repository.deleteCustomer(customer1, true));
+    ASSERT_NO_THROW(repository.deleteCustomer(customer1, employee));
     ASSERT_EQ(repository.getAll().size(), 0);
 }
 
 TEST_F(CustomerRepositoryTest, DeleteCustomer_NotEmployee) {
-    ASSERT_THROW(repository.deleteCustomer(customer1, false), std::invalid_argument);
+    ASSERT_THROW(repository.deleteCustomer(customer1, employee), std::invalid_argument);
     ASSERT_EQ(repository.getAll().size(), 1);
 }
 
 TEST_F(CustomerRepositoryTest, AnonymizeCustomer_NotEmployee) {
-    ASSERT_THROW(repository.anonymizeCustomer(customer1, false), std::invalid_argument);
+    ASSERT_THROW(repository.anonymizeCustomer(customer1, employee), std::invalid_argument);
     auto customers = repository.getAll();
     ASSERT_EQ(customers.at(0).getName(), "John");
 }
 
 TEST_F(CustomerRepositoryTest, AnonymizeCustomer_Success) {
-    ASSERT_NO_THROW(repository.anonymizeCustomer(customer1, true));
+    ASSERT_NO_THROW(repository.anonymizeCustomer(customer1, employee));
     auto customers = repository.getAll();
     ASSERT_EQ(customers.at(0).getName(), "Customer-1");
     ASSERT_EQ(customers.at(0).getlastName(), "Unknown");
